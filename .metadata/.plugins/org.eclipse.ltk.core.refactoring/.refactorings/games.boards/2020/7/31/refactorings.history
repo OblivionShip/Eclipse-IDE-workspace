@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;TicTacToeGame.java&apos; to &apos;BoardGameTester/src/games.boards&apos;&#x0D;&#x0A;- Original project: &apos;games.boards&apos;&#x0D;&#x0A;- Destination element: &apos;BoardGameTester/src/games.boards&apos;&#x0D;&#x0A;- Original element: &apos;TicTacToeGame.java&apos;" description="Copy file" destination="=BoardGameTester/src&lt;games.boards" element1="tictactoegame/TicTacToeGame.java" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1595884387501" units="0" version="1.0"/>
+</session>

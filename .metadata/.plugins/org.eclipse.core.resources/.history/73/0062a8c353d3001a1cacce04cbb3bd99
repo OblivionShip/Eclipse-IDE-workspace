@@ -1,0 +1,433 @@
+package games.board;
+import games.board.Mark;
+import games.board.Outcome;
+import games.board.Player;
+import games.board.Board;
+import games.board.Cell;
+import java.util.Scanner.*;
+import java.lang.*;
+
+public class BoardGameTester {
+	static Mark mark;
+	static Outcome outcome;
+	static Player player;
+	// Create a 3x3 board for TicTacToe
+		private static int[][] tttgameboard = new int[3][3];
+			private static final int tttEMPTY = 0;
+			private static final int tttNOUGHT = -999;
+			private static final int tttCROSS = 999;
+			
+		public static void main(String [] args) {
+			tttcreateBoard(3,3);
+			int turn = 0;
+			int Player;
+			int Outcome;
+			java.util.Scanner scan = new java.util.Scanner(System.in);
+			do {
+				tttdisplayBoard( );
+				Player = (turn%2 == 0)? tttNOUGHT : tttCROSS;
+				if (Player == tttNOUGHT)
+					System.out.println ("\n—Player1's turn—");
+				else System.out.println ("\n—Player2's turn—");
+				System.out.print("Make a move:" );
+				try  {
+					set(Player, scan.nextInt(), scan.nextInt());
+				} catch (Exception ex)
+				{System.err.println(ex); turn--;}
+				
+				turn ++;
+				Outcome = tttwinOrTie( );
+			} while ( Outcome == -1);
+			
+			tttdisplayBoard();
+			
+			switch (Outcome) {
+			case tttNOUGHT:
+				System.out.println("Player1 wins!");
+				break;
+			case tttCROSS:
+				System.out.println("Player 2 wins!");
+				break;
+			case 0:
+				System.out.println("Tie.");
+				break;
+				}
+			}
+		//** NEXT GAME **//
+		//** NEXT GAME **//
+		//** NEXT GAME **//
+		//** NEXT GAME **//
+		//** NEXT GAME **//
+		//** NEXT GAME **//
+	// Create a 6x7 board for ConnectFour
+		private static int[][] cfgameboard = new int[6][7];
+			private static final int cfEMPTY = 0;
+			private static final int cfYELLOW = -99;
+			private static final int cfRED = 99;
+			
+			public static void main2(String [] args) {
+				cfcreateBoard(6,7);
+				int turn = 0;
+				int Player;
+				int Outcome;
+				java.util.Scanner scan = new java.util.Scanner(System.in);
+				do {
+					cfdisplayBoard( );
+					Player = (turn%2 == 0)? cfYELLOW : cfRED;
+					if (Player == cfYELLOW)
+						System.out.println ("\n—Player1's turn—");
+					else System.out.println ("\n—Player2's turn—");
+					System.out.print("Make a move:" );
+					try  {
+						set(Player, scan.nextInt(), scan.nextInt());
+					} catch (Exception ex)
+					{System.err.println(ex); turn--;}
+					
+					turn ++;
+					Outcome = cfwinOrTie( );
+				} while ( Outcome == -2);
+				
+				cfdisplayBoard();
+				
+				switch (Outcome) {
+				case cfYELLOW:
+					System.out.println("Player1 wins!");
+					break;
+				case cfRED:
+					System.out.println("Player 2 wins!");
+					break;
+				case 0:
+					System.out.println("Tie.");
+					break;
+					}
+				}			
+			//** NEXT GAME **//
+			//** NEXT GAME **//
+			//** NEXT GAME **//
+			//** NEXT GAME **//
+			//** NEXT GAME **//
+			//** NEXT GAME **//
+	// Create a 5x8 board for Mastermind
+		private static int[][] mmgameboard = new int[5][8];
+			private static final int mmEMPTY = 0;
+			private static final int mmYELLOW = -3;
+			private static final int mmRED = 3;
+			private static final int mmGREEN = -4;
+			private static final int mmBLUE = 4;
+			private static final int mmMAGENTA = -5;
+			private static final int mmORANGE = 5;
+			
+			public static void main3(String [] args) {
+				mmcreateBoard(5,8);
+				int turn = 0;
+				int Player;
+				int Outcome;
+				java.util.Scanner scan = new java.util.Scanner(System.in);
+				do {
+					mmdisplayBoard( );
+					Player = (turn%2 == 0)? mmYELLOW : mmRED;
+					if (Player == mmYELLOW)
+						System.out.println ("\n—Player1's turn—");
+					else System.out.println ("\n—Player2's turn—");
+					System.out.print("Make a move:" );
+					try  {
+						set(Player, scan.nextInt(), scan.nextInt());
+					} catch (Exception ex)
+					{System.err.println(ex); turn--;}
+					
+					turn ++;
+					Outcome = mmwinOrTie( );
+				} while ( Outcome == -2);
+				
+				mmdisplayBoard();
+				
+				switch (Outcome) {
+				case mmYELLOW:
+					System.out.println("Player1 wins!");
+					break;
+				case mmRED:
+					System.out.println("Player 2 wins!");
+					break;
+				case 0:
+					System.out.println("Tie.");
+					break;
+					}
+				}
+			/* Set board must be empty */
+			static void set1(int val, int row, int col)
+			throws IllegalArgumentException {
+				if (tttgameboard[row][col] == tttEMPTY)
+					tttgameboard[row][col] = val;
+				else throw new IllegalArgumentException
+				("Player already there!");
+			}
+			static void set2(int val, int row, int col)
+			throws IllegalArgumentException {
+				if (cfgameboard[row][col] == cfEMPTY)
+					cfgameboard[row][col] = val;
+				else throw new IllegalArgumentException
+				("Row is full!");
+			}
+				static void set3(int val, int row, int col)
+						throws IllegalArgumentException {
+				if (mmgameboard[row][col] == tttEMPTY)
+					mmgameboard[row][col] = val;
+				else throw new IllegalArgumentException
+				("Peg is taken!");
+			}
+			/*display the Tic Tac Toe board*/
+			static void tttdisplayBoard() {
+				System.out.print("TicTacToe:");
+				System.out.println();
+				for(int r=0; r < tttgameboard.length; r++) {
+					System.out.print("|");
+					for (int c=0; c < tttgameboard[r].length; c++)
+					{
+						switch(tttgameboard[r][c]) {
+						case tttNOUGHT:
+							System.out.print("O");
+						break;
+						case tttCROSS:
+							System.out.print("X");
+						break;
+						default: //Empty
+							System.out.print(" ");
+						}
+							System.out.print("|");
+					}
+					System.out.println("\n-------");
+				}
+			}
+			/*display the Connect Four board*/
+			static void cfdisplayBoard() {
+				System.out.print("ConnectFour:");
+				System.out.println();
+				for(int r=0; r < cfgameboard.length; r++) {
+					System.out.print("|");
+					for(int c=0; c < cfgameboard.length; c++)
+					{
+						switch(cfgameboard[r][c]) {
+						case cfYELLOW:
+							System.out.print("Y");
+						break;
+						case cfRED:
+							System.out.print("R");
+						break;
+						default: //Empty
+							System.out.print(" ");
+						}
+							System.out.print("|");
+					}
+					System.out.println("\n           ");
+				}
+			}
+			/* display the Mastermind board */
+			static void mmdisplayBoard() {
+				System.out.print("Mastermind:");
+				System.out.println();
+				for(int r=0; r < mmgameboard.length; r++) {
+					System.out.print("|");
+					for (int c=0; c < mmgameboard[r].length; c++)
+					{
+						switch(mmgameboard[r][c]) {
+						case mmYELLOW:
+							System.out.print("Y");
+						break;
+						case mmRED:
+							System.out.print("R");
+						break;
+						default: //Empty
+							System.out.print(" ");
+						}
+							System.out.print("|");
+					}
+					System.out.println("\n------------------");
+				}
+			}
+			/* createBoard */
+			private static void tttcreateBoard(int i, int j) {
+				//TODO Initialize the tttgameboard
+				System.out.print("TicTacToe:");
+				System.out.println();
+				int r, c;
+				int tttcreateBoard [][] = new int [3][3];
+				
+				for(r=0; r < 3; ++r) {
+					for(c=0; c < 3; ++c) {
+						tttcreateBoard[r][c]=(r*1)+(c*1);
+						System.out.print(tttcreateBoard[r][c] + " ");
+					}
+					System.out.println();
+				}
+			}
+			private static void cfcreateBoard(int i, int j) {
+				//TODO Initialize the cfgameboard
+				System.out.print("ConnectFour:");
+				System.out.println();
+				int r, c;
+				int cfcreateBoard [][] = new int [6][7];
+				
+				for(r=0; r < 6; ++r) {
+					for(c=0; c < 7; ++c) {
+						cfcreateBoard[r][c]=(r*1)+(c*1);
+						System.out.print(cfcreateBoard[r][c] + " ");
+					}
+					System.out.println();
+				}
+			}
+	
+			private static void mmcreateBoard(int i, int j) {
+				//TODO Initialize the mmgameboard
+				System.out.print("Mastermind:");
+				System.out.println();
+				int r, c;
+				int mmcreateBoard[][] = new int [5][8];
+				
+				for(r=0; r < 5; ++r) {
+					for(c=0; c < 8; ++c) {
+						mmcreateBoard[r][c]=(r*1)+(c+1);
+						System.out.print(mmcreateBoard[r][c] + " ");
+					}
+					System.out.println();
+				}
+			}
+	private static int tttwinOrTie() {
+		//TODO Determine whether X or O won or there is a tie
+		if (tttgameboard[0][0] + tttgameboard[0][1] + tttgameboard[0][2] == 3*tttNOUGHT)
+			{return tttNOUGHT;}
+		if (tttgameboard[1][0] + tttgameboard[1][1] + tttgameboard[1][2] == 3*tttNOUGHT)
+			{return tttNOUGHT;}
+		if (tttgameboard[2][0] + tttgameboard[2][1] + tttgameboard[2][2] == 3*tttNOUGHT)
+			{return tttNOUGHT;}
+		
+		if (tttgameboard[0][0] + tttgameboard[1][0] + tttgameboard[2][0] == 3*tttNOUGHT)
+			{return tttNOUGHT;}
+		if (tttgameboard[0][1] + tttgameboard[1][1] + tttgameboard[2][1] == 3*tttNOUGHT)
+			{return tttNOUGHT;}
+		if (tttgameboard[0][2] + tttgameboard[1][2] + tttgameboard[2][2] == 3*tttNOUGHT)
+			{return tttNOUGHT;}
+		if (tttgameboard[0][0] + tttgameboard[1][1] + tttgameboard[2][2] == 3*tttNOUGHT)
+			{return tttNOUGHT;}
+		if (tttgameboard[0][2] + tttgameboard[1][1] + tttgameboard[2][0] == 3*tttNOUGHT)
+			{return tttNOUGHT;}
+		
+		if (tttgameboard[0][0] + tttgameboard[0][1] + tttgameboard[0][2] == 3*tttCROSS)
+			{return tttCROSS;}
+		if (tttgameboard[1][0] + tttgameboard[1][1] + tttgameboard[1][2] == 3*tttCROSS)
+			{return tttCROSS;}
+		if (tttgameboard[2][0] + tttgameboard[2][1] + tttgameboard[2][2] == 3*tttCROSS)
+			{return tttCROSS;}
+		
+		if (tttgameboard[0][0] + tttgameboard[1][0] + tttgameboard[2][0] == 3*tttCROSS)
+			{return tttCROSS;}
+		if (tttgameboard[0][1] + tttgameboard[1][1] + tttgameboard[2][1] == 3*tttCROSS)
+			{return tttCROSS;}
+		if (tttgameboard[0][2] + tttgameboard[1][2] + tttgameboard[2][2] == 3*tttCROSS)
+			{return tttCROSS;}
+		if (tttgameboard[0][0] + tttgameboard[1][1] + tttgameboard[2][2] == 3*tttCROSS)
+			{return tttCROSS;}
+		if (tttgameboard[0][2] + tttgameboard[1][1] + tttgameboard[2][0] == 3*tttCROSS)
+			{return tttCROSS;}
+		
+		if (tttgameboard[2][2] + tttgameboard[1][2] + tttgameboard[1][1] + tttgameboard[0][1]
+				+ tttgameboard[2][0] == 5*tttNOUGHT)
+			{return -2;}
+		if (tttgameboard[0][0] + tttgameboard[1][0] + tttgameboard[1][1] + tttgameboard[2][1] 
+				+  tttgameboard[0][2] == 5*tttNOUGHT)
+			{return 0;}
+		if (tttgameboard[0][2] + tttgameboard[1][2] + tttgameboard[1][1] + tttgameboard[2][1]
+				+ tttgameboard[0][0] == 5*tttNOUGHT)
+			{return 0;}
+		if (tttgameboard[2][0] + tttgameboard[2][1] + tttgameboard[1][1] + tttgameboard[1][2]
+				+ tttgameboard[0][0] == 5*tttNOUGHT)
+			{return 0;}
+		if (tttgameboard[0][0] + tttgameboard[0][1] + tttgameboard[1][1] + tttgameboard[1][2]
+				+ tttgameboard[2][0] == 5*tttNOUGHT)
+			{return 0;}
+		if (tttgameboard[2][0] + tttgameboard[1][0] + tttgameboard[1][1] + tttgameboard[0][1]
+				+ tttgameboard[2][2] == 5*tttNOUGHT)
+			{return 0;}
+		if (tttgameboard[0][2] + tttgameboard[0][1] + tttgameboard[1][1] + tttgameboard[1][0]
+				+ tttgameboard[2][2] == 5*tttNOUGHT)
+			{return 0;}
+		if (tttgameboard[2][2] + tttgameboard[2][1] + tttgameboard[1][1] + tttgameboard[1][0]
+				+ tttgameboard[0][2] == 5*tttNOUGHT)
+			{return 0;}
+		if(tttgameboard[0][2] + tttgameboard[0][1] + tttgameboard[1][2] + tttgameboard[2][1]
+				+  tttgameboard[1][0] == 5*tttNOUGHT)
+			{return 0;}
+		if(tttgameboard[0][0] + tttgameboard[1][0] + tttgameboard[0][1] + tttgameboard[2][1]
+				+  tttgameboard[1][2] == 5*tttNOUGHT)
+			{return 0;}
+		if(tttgameboard[2][0] + tttgameboard[1][0] + tttgameboard[2][1] + tttgameboard[0][1]
+				+  tttgameboard[1][2] == 5*tttNOUGHT)
+			{return 0;}
+		if(tttgameboard[2][2] + tttgameboard[1][2] + tttgameboard[2][1] + tttgameboard[0][1]
+				+  tttgameboard[1][0] == 5*tttNOUGHT)
+			{return 0;}
+		if (tttgameboard[0][2] + tttgameboard[0][1] + tttgameboard[1][2] + tttgameboard[1][0]
+				+ tttgameboard[2][0] == 5*tttNOUGHT)
+			{return 0;}
+		if (tttgameboard[0][2] + tttgameboard[0][1] + tttgameboard[2][1] + tttgameboard[2][0]
+				+ tttgameboard[2][1] == 5*tttNOUGHT)
+			{return 0;}
+		if (tttgameboard[0][0] + tttgameboard[0][1] + tttgameboard[1][0] + tttgameboard[2][1]
+				+ tttgameboard[2][2] == 5*tttNOUGHT)
+			{return 0;}
+		if (tttgameboard[0][0] + tttgameboard[0][1] + tttgameboard[1][0] + tttgameboard[1][2]
+				+ tttgameboard[2][2] == 5*tttNOUGHT)
+			{return 0;}
+		if (tttgameboard[2][2] + tttgameboard[2][1] + tttgameboard[1][2] + tttgameboard[1][0]
+				+ tttgameboard[0][0] == 5*tttNOUGHT)
+			{return 0;}
+		if (tttgameboard[2][2] + tttgameboard[2][1] + tttgameboard[1][2] + tttgameboard[0][1]
+				+ tttgameboard[0][0] == 5*tttNOUGHT)
+			{return 0;}
+		if (tttgameboard[2][0] + tttgameboard[2][1] + tttgameboard[1][0] + tttgameboard[0][1]
+				+ tttgameboard[0][2] == 5*tttNOUGHT)
+			{return 0;}
+		if (tttgameboard[2][0] + tttgameboard[2][1] + tttgameboard[1][0] + tttgameboard[1][2]
+				+ tttgameboard[2][2] == 5*tttNOUGHT)
+			{return 0;}
+		if (tttgameboard[2][0] + tttgameboard[1][0] + tttgameboard[2][1] + tttgameboard[0][2]
+				+ tttgameboard[0][1] == 5*tttNOUGHT)
+			{return 0;}
+		if (tttgameboard[2][0] + tttgameboard[1][0] + tttgameboard[2][1] + tttgameboard[1][2]
+				+ tttgameboard[0][2] == 5*tttNOUGHT)
+			{return 0;}
+		if (tttgameboard[0][0] + tttgameboard[0][2] + tttgameboard[1][2] + tttgameboard[2][0]
+				+ tttgameboard[2][1] == 5*tttNOUGHT)
+			{return 0;}
+		if (tttgameboard[2][2] + tttgameboard[0][1] + tttgameboard[0][2] + tttgameboard[1][0]
+				+ tttgameboard[2][0] == 5*tttNOUGHT)
+			{return 0;}
+		if (tttgameboard[0][2] + tttgameboard[1][0] + tttgameboard[0][0] + tttgameboard[2][2]
+				+ tttgameboard[2][1] == 5*tttNOUGHT)
+			{return 0;}
+		if (tttgameboard[2][0] + tttgameboard[2][2] + tttgameboard[1][2] + tttgameboard[0][0]
+				+ tttgameboard[0][1] == 5*tttNOUGHT)
+			{return 0;}
+		if (tttgameboard[0][0] + tttgameboard[0][1] + tttgameboard[2][0] + tttgameboard[2][1]
+				+ tttgameboard[1][2] == 5*tttNOUGHT)
+			{return 0;}
+		if (tttgameboard[2][0] + tttgameboard[1][0] + tttgameboard[2][2] + tttgameboard[1][2]
+				+ tttgameboard[0][1] == 5*tttNOUGHT)
+			{return 0;}
+		if (tttgameboard[0][1] + tttgameboard[0][2] + tttgameboard[2][1] + tttgameboard[2][2]
+				+ tttgameboard[1][0] == 5*tttNOUGHT)
+			{return 0;}
+		if (tttgameboard[0][0] + tttgameboard[1][0] + tttgameboard[0][2] + tttgameboard[1][2]
+				+ tttgameboard[2][1] == 5*tttNOUGHT)
+			{return 0;}
+
+		return -2;
+	}
+	private static int cfwinOrTie() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	private static int mmwinOrTie() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+}

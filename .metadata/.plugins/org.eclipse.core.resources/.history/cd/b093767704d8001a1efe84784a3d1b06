@@ -1,0 +1,180 @@
+package games.board;
+import games.board.Mark;
+import games.board.Outcome;
+import games.board.Player;
+import games.board.Board;
+import games.board.Cell;
+import java.util.Scanner.*;
+import java.lang.*;
+
+public class BoardGameTesterAttempt2 {
+	static Mark mark;
+	static Outcome outcome;
+	static Player player;
+	private static int[][] tttgameboard = new int[3][3];
+	private static int[][] cfgameboard = new int[6][7];
+	private static int[][] mmgameboard = new int[5][8];
+	public void Mark() {
+		switch (mark) {
+		case NOUGHT:
+			System.out.println("O");
+			break;
+		case YELLOW:
+			System.out.println("Y");
+			break;
+		case RED:
+			System.out.println("R");
+			break;
+		case BLUE:
+			System.out.println("B");
+			break;
+		case GREEN:
+			System.out.println("G");
+			break;
+		case MAGENTA:
+			System.out.println("M");
+			break;
+		case ORANGE:
+			System.out.println("M");
+			break;
+		case EMPTY:
+			System.out.println(" ");
+			break;
+		}
+	}
+	public void Player() {
+		switch (player) {
+		case FIRST:
+			System.out.println("FIRST");
+			break;
+		case SECOND:
+			System.out.println("SECOND");
+			break;
+		}
+	}
+	public void Outcome() {
+		switch(outcome) {
+		case PLAYER1_WIN:
+			System.out.println("Player 1 wins!");
+			break;
+		case PLAYER2_WIN:
+			System.out.println("Player 2 wins!");
+			break;
+		case CONTINUE:
+			System.out.println("Please continue.");
+			break;
+		case TIE:
+			System.out.println("The game ended in a tie.");
+			break;
+		}
+	}
+		
+		
+	public static void main(String [] args) {
+		tttcreateBoard(3,3);
+		cfcreateBoard(6,7);
+		mmcreateBoard(5,8);
+		int turn = 0;
+		int Player;
+		int Outcome;
+		java.util.Scanner scan = new java.util.Scanner(System.in);
+		do {
+			tttdisplayBoard( );
+			cfdisplayBoard( );
+			mmdisplayBoard( );
+				System.out.println ("\n—Player1's turn—");
+			System.out.print("Make a move:" );
+			try {
+			} catch (Exception ex)
+			{System.err.println(ex); turn--;}
+			
+			turn ++;
+			Outcome = tttwinOrTie( );
+			Outcome = cfwinOrTie( );
+			Outcome = mmwinOrTie( );
+		} while ( Outcome == -2);
+		
+		tttdisplayBoard();
+		cfdisplayBoard();
+		mmdisplayBoard();
+		
+	}
+	
+	/*display the Tic Tac Toe board*/
+	static void tttdisplayBoard() {
+		System.out.print("TicTacToe:");
+		System.out.println();
+		for(int r=0; r < tttgameboard.length; r++) {
+			System.out.print("|");
+			for (int c=0; c < tttgameboard[r].length; c++)
+			{
+				switch(tttgameboard[r][c]) {
+				default: //Empty
+					System.out.print(" ");
+				}
+					System.out.print("|");
+			}
+			System.out.println("\n-------");
+		}
+	}
+	/*display the Connect Four board*/
+	static void cfdisplayBoard() {
+		System.out.print("ConnectFour:");
+		System.out.println();
+		for(int r=0; r < cfgameboard.length; r++) {
+			System.out.print("|");
+			for(int c=0; c < cfgameboard.length; c++)
+			{
+				switch(cfgameboard[r][c]) {
+				default: //Empty
+					System.out.print(" ");
+				}
+					System.out.print("|");
+			}
+			System.out.println("\n           ");
+		}
+	}
+	/* display the Mastermind board */
+	static void mmdisplayBoard() {
+		System.out.print("Mastermind:");
+		System.out.println();
+		for(int r=0; r < mmgameboard.length; r++) {
+			System.out.print("|");
+			for (int c=0; c < mmgameboard[r].length; c++)
+			{
+				switch(mmgameboard[r][c]) {
+				default: //Empty
+					System.out.print(" ");
+				}
+					System.out.print("|");
+			}
+			System.out.println("\n------------------");
+		}
+	}
+
+	/* createBoard */
+	// Create a 3x3 board for TicTacToe
+	private static void tttcreateBoard(int i, int j) {
+		//TODO Initialize the tttgameboard
+	}
+	// Create a 6x7 board for ConnectFour
+	private static void cfcreateBoard(int i, int j) {
+		//TODO Initialize the cfgameboard
+	}
+	// Create a 5x8 board for Mastermind
+	private static void mmcreateBoard(int i, int j) {
+		//TODO Initialize the mmgameboard
+	}
+	private static int mmwinOrTie() {
+		//TODO Determine whether X or O won or there is a tie
+		return 0;
+	}
+	private static int cfwinOrTie() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	private static int tttwinOrTie() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+}

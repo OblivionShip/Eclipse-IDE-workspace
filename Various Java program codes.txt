@@ -1,0 +1,2179 @@
+how to make people trust me?
+		what are my weaknesses? - end of July
+				august find resources to improve
+				september 
+______________________________________________________________________________________
+AssigningArrayReferencespg146->AssignARef.java code ->
+package AssigningArrayReferences;
+//Assigning array reference variables.
+class AssignARef {
+	public static void main(String args[]) {
+		int i;
+		
+		int nums1[] = new int [10];
+		int nums2[] = new int [10];
+		
+		for (i=0; i < 10; i++)
+			nums1[i] = i;
+		
+		for (i=0; i < 10; i++)
+			nums2[i] = -i;
+		
+		System.out.print("Here is nums1: ");
+		for (i=0; i < 10; i++)
+			System.out.print(nums1[i] + " ");
+		System.out.println();
+		
+		System.out.print("Here is nums2: ");
+		for (i=0; i < 10; i++)
+			System.out.print(nums2[i] + " ");
+		System.out.println();
+		
+		nums2 = nums1; // now nums2 refers to nums1
+		
+		System.out.print("Here is nums2 after assignment: ");
+		for(i=0; i < 10; i++)
+			System.out.print(nums2[i] + " ");
+		System.out.println();
+		
+		//now operate on nums1 array through nums2
+		nums2[3] = 99;
+		
+		System.out.print("Here is nums1 after change through nums2: ");
+		for (i=0; i < 10; i++)
+			System.out.print(nums1[i] + " ");
+		System.out.println();
+	}
+}
+_____________________________________________________________________________________________________________________________________________________
+
+Example 1->Example.java code ->
+/*
+*	This is a simple Java program.
+*	
+*	Call this file Example.java.
+*/
+public class Example {
+	public static void main(String args[]) {
+		System.out.println("Java drives the Web.");
+	}
+}
+_____________________________________________________________________________________________________________________________________________________
+
+Example2->Example2.java code ->
+package Example2;
+/*
+ * Compute the number of cubic inches
+ * in 1 cubic mile.
+*/
+public class Example2 {
+	public static void main(String args[]) {
+		long ci;
+		long im;
+		
+		im = 5280 * 12;
+		
+		ci = im * im * im;
+				
+		System.out.println("There are " + ci + " cubic inches in cubic mile.") ;
+		
+	}
+}
+_____________________________________________________________________________________________________________________________________________________
+
+Example3->Example3.java code ->
+import javax.swing.JOptionPane;
+import java.util.Random;
+
+	public class Example3{
+		public static void main( String [ ] args ) {
+			
+			Random random = new Random();
+			int randomNumber = random.nextInt( 101 );
+			boolean userCorrect = false;
+			String userInputString;
+			int userGuessedNumber;
+			
+			while( !userCorrect ) {
+				userInputString = JOptionPane.showInputDialog( "Guess the number: " );
+				userGuessedNumber = Integer.parseInt( userInputString );
+				if( userGuessedNumber > randomNumber ) {
+					JOptionPane.showMessageDialog( null, "Too high, try again" );
+				} else if( userGuessedNumber < randomNumber ) {
+					JOptionPane.showMessageDialog( null,  "Too low, try again");
+				} else {
+					JOptionPane.showMessageDialog( null, "Yes, you guessed the number.");
+					userCorrect = true;
+				}
+			}
+			
+		}
+	}
+
+_____________________________________________________________________________________________________________________________________________________
+
+Example4->Example4.java code ->
+package Example4;
+import java.util.Scanner;
+public class Example4 {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner (System.in);
+		
+		String user, pass;
+		
+		System.out.println("Enter your username: ");
+		user = input.nextLine();
+		
+		System.out.println("Enter your password: ");
+		pass = input.nextLine();
+		
+		
+		if (user.equals("User") && (pass.equals("Pass"))) {
+			System.out.println("Welcome non-fake.");
+		}else {
+			System.out.println("Sorry, you fake.");
+		}
+	}
+}
+
+_____________________________________________________________________________________________________________________________________________________
+
+Example5->Example5.java code ->
+package Example5;
+//Demonstrates boolean values.
+class Example5 {
+
+	public static void main(String[] args) {
+		boolean b;
+		
+		b = false;
+		System.out.println("b is " + b);
+		b = true;
+		System.out.println("b is " + b);
+		
+		// a boolean value can control the if statement
+		if (b) System.out.println("This is executed.");
+		
+		b = false;
+		if (b) System.out.println("This is not executed.");
+		
+		
+		// outcome of a relational operator is a boolean value
+		System.out.println("10 > 9 is " + (10 > 9));
+	}
+ }
+_____________________________________________________________________________________________________________________________________________________
+
+For Loop->ForLoop.java code ->
+/*
+	Demonstrate the for loop.
+ * 
+	Call this file ForLoop.java.
+ */
+public class ForLoop {
+	public static void main(String args[]) {
+		int count;
+		
+		for(count = 0; count < 5; count = count+1)
+			System.out.println("This is count: " + count);
+		
+		System.out.println("Done!");
+	}
+}
+_____________________________________________________________________________________________________________________________________________________
+
+HelloWorld->HelloWorld.java code ->
+package com.charleskelly.hello;
+public class HelloWorld
+{
+		/**
+		 * 	@param args
+		 *
+		 */
+		public static void main(String[] args)
+		{
+			System.out.println("Hello World!");
+		}//public static void main(String[] args)
+		
+}//public class HelloWorld
+_____________________________________________________________________________________________________________________________________________________
+
+IfDemo->IfDemo.java code ->
+/*
+ * Demonstrate the if.
+ * 
+ * Call this file IfDemo.java.
+ */
+package IfDemo;
+
+public class IfDemo {
+	public static void main(String[] args) {
+		int a, b, c;
+		
+		a = 2;
+		b = 3;
+		
+		if (a < b) System.out.println("a is less than b");
+		//this won't display anything
+		if (a == b) System.out.println("you won't see this");
+		
+		System.out.println();
+		
+		c = a - b; // c contains - 1
+		
+		System.out.println("c contains -1");
+		if (c >= 0) System.out.println("c is non-negative");
+		if (c < 0) System.out.println("c is negative");
+		
+		System.out.println();
+		
+		c = b - a; // c now contains 1
+		
+		System.out.println("c contains 1");
+		if (c >= 0) System.out.println("c is non-negative");
+		if (c < 0) System.out.println("c is negative");
+		
+	}
+}
+_____________________________________________________________________________________________________________________________________________________
+
+Initializing Multidimensional Arrayspg145->InitializingMultidimensionalArrays.java code->
+package InitializingMultidimensionalArrays;
+//Initialize a two-dimensional array.
+class InitializingMultidimensionalArrays {
+	public static void main(String[] args) {
+		int sqrs [] [] = {
+			{ 1, 1 },
+			{ 2, 4 },
+			{ 3, 9 },
+			{ 4, 16 },
+			{ 5, 25 },
+			{ 6, 36 },
+			{ 7, 49 },
+			{ 8, 64 },
+			{ 9, 81 },
+			{ 10, 100 },
+		};
+		int i, j;
+		
+		for (i=0; i < 10; i++) {
+			for (j=0; j < 2; j++)
+				System.out.print(sqrs[i][j] + " ");
+			System.out.println();
+		}
+	}
+}
+
+_____________________________________________________________________________________________________________________________________________________
+
+MainProject->Main.java code ->
+public class Main {
+	public static void main(String[] args) {
+		sayHi();
+	}
+//Display a message
+	static void sayHi() {
+		System.out.println("Hi");	
+	}
+}
+____________________________________________________________________________________________________________________________________________________
+
+NumberGuess->NumberGuess.java code ->
+package numberguess;
+import java.util.Scanner;
+
+public class NumberGuess {
+	public static void main( String [ ] args ) {
+		// Define program variables
+		int randNum, attemptNum, guessNum;
+		
+		// Generate a random number between 1 and 10
+		randNum = new java.util.Random().nextInt(10)+1;
+		
+		//Display a message
+		System.out.println
+		("I am thinking of a random number between 1 and 10.");
+		
+		//Ask for a guess and check the input
+				for (attemptNum = 1; attemptNum <= 3; attemptNum = attemptNum+1) {
+				System.out.print("Guess what it is?");
+					java.util.Scanner scan = new java.util.Scanner(System.in);
+					guessNum = scan.nextInt();
+					System.out.println("You guessed " + guessNum);
+					if (guessNum == randNum) {
+						System.out.println("You guessed it!");
+						break;
+				}	
+						System.out.println("Sorry, try again!");
+				}
+			}
+		}
+__________________________________________________________________________________________________________________________________________
+
+SumTo100->SumTo100.java code ->
+package sumto100;
+/*
+This program adds the numbers through 100
+*/
+class SumTo100 {
+
+public static void main(String[] args) {
+	int num=0;//declare some variables
+	int total=0;
+	int count;
+	for (count=1; count<=100; count++) {
+		num++;
+		total = total + num;
+	}
+	System.out.println ("The sum of the numbers 1 through 100 is " +
+		total);
+}
+}
+_____________________________________________________________________________________________________________________________________________________
+
+TicTacToeGame->TicTacToeGame.java code ->
+package tictactoegame;
+import java.util.Scanner;
+
+public class TicTacToeGame {
+	static int[][] gameboard = new int[3][3];
+	static final int EMPTY = 0;
+	static final int NOUGHT = -1;
+	static final int CROSS = 1;
+
+	public static void main (String [] args) {
+		createBoard(3,3);
+		int turn = 0;
+		int playerVal;
+		int outcome;
+		java.util.Scanner scan = new java.util.Scanner(System.in);
+		do {
+			displayBoard( );
+			playerVal = (turn % 2 == 0)? NOUGHT : CROSS;
+			if (playerVal == NOUGHT) 
+				System.out.println ("\n—O's turn—");
+			else System.out.println("\n—X's turn—" ); 
+			System.out.print("Enter row and column:" ); 
+			try {
+				set(playerVal, scan.nextInt(), scan.nextInt());
+			} catch (Exception ex) 
+			{System.err.println(ex); turn--;}
+			
+			turn ++;
+			outcome = winOrTie( );
+		} while ( outcome == -2 );
+		
+		displayBoard();
+		
+		switch (outcome) {
+		case NOUGHT:
+			System.out.println("O wins!");
+			break;
+		case CROSS:
+			System.out.println("X wins!");
+			break;
+		case 0:
+			System.out.println("Tie.");
+			break;
+		}
+	}
+
+	/* Set a square on the board must be empty */
+	static void set(int val, int row, int col)
+	throws IllegalArgumentException {
+		if (gameboard[row][col] == EMPTY)
+			gameboard[row][col] = val;
+		else throw new IllegalArgumentException
+			("Player already there!");
+	}
+	
+	/* display the board */
+	static void displayBoard() {
+		for(int r=0; r < gameboard.length; r++) {
+			System.out.print("|");
+			for (int c = 0; c < gameboard[r].length; c++)
+			{
+				switch(gameboard[r][c]) {
+				case NOUGHT:
+					System.out.print("O");
+				break;
+				case CROSS:
+					System.out.print("X");
+				break;
+				default: //Empty
+					System.out.print(" ");
+				}
+					System.out.print("|");
+			}
+			System.out.println("\n-------");
+			}
+		}
+	public static void createBoard(int rows, int cols) {
+		//TODO Initialize the gameboard
+	}
+	
+	static int winOrTie() {
+		//TODO Determine whether X or O won or there is a tie
+		if (gameboard[0][0] + gameboard[0][1] + gameboard[0][2] == 3*NOUGHT)
+			{return NOUGHT;}
+		if (gameboard[1][0] + gameboard[1][1] + gameboard[1][2] == 3*NOUGHT)
+			{return NOUGHT;}
+		if (gameboard[2][0] + gameboard[2][1] + gameboard[2][2] == 3*NOUGHT)
+			{return NOUGHT;}
+		
+		if (gameboard[0][0] + gameboard[1][0] + gameboard[2][0] == 3*NOUGHT)
+			{return NOUGHT;}
+		if (gameboard[0][1] + gameboard[1][1] + gameboard[2][1] == 3*NOUGHT)
+			{return NOUGHT;}
+		if (gameboard[0][2] + gameboard[1][2] + gameboard[2][2] == 3*NOUGHT)
+			{return NOUGHT;}
+		if (gameboard[0][0] + gameboard[1][1] + gameboard[2][2] == 3*NOUGHT)
+			{return NOUGHT;}
+		if (gameboard[0][2] + gameboard[1][1] + gameboard[2][0] == 3*NOUGHT)
+			{return NOUGHT;}
+		
+		if (gameboard[0][0] + gameboard[0][1] + gameboard[0][2] == 3*CROSS)
+			{return CROSS;}
+		if (gameboard[1][0] + gameboard[1][1] + gameboard[1][2] == 3*CROSS)
+			{return CROSS;}
+		if (gameboard[2][0] + gameboard[2][1] + gameboard[2][2] == 3*CROSS)
+			{return CROSS;}
+		
+		if (gameboard[0][0] + gameboard[1][0] + gameboard[2][0] == 3*CROSS)
+			{return CROSS;}
+		if (gameboard[0][1] + gameboard[1][1] + gameboard[2][1] == 3*CROSS)
+			{return CROSS;}
+		if (gameboard[0][2] + gameboard[1][2] + gameboard[2][2] == 3*CROSS)
+			{return CROSS;}
+		if (gameboard[0][0] + gameboard[1][1] + gameboard[2][2] == 3*CROSS)
+			{return CROSS;}
+		if (gameboard[0][2] + gameboard[1][1] + gameboard[2][0] == 3*CROSS)
+			{return CROSS;}
+		
+		if (gameboard[2][2] + gameboard[1][2] + gameboard[1][1] + gameboard[0][1]
+				+ gameboard[2][0] == 5*NOUGHT)
+			{return 0;}
+		if (gameboard[0][0] + gameboard[1][0] + gameboard[1][1] + gameboard[2][1] 
+				+  gameboard[0][2] == 5*NOUGHT)
+			{return 0;}
+		if (gameboard[0][2] + gameboard[1][2] + gameboard[1][1] + gameboard[2][1]
+				+ gameboard[0][0] == 5*NOUGHT)
+			{return 0;}
+		if (gameboard[2][0] + gameboard[2][1] + gameboard[1][1] + gameboard[1][2]
+				+ gameboard[0][0] == 5*NOUGHT)
+			{return 0;}
+		if (gameboard[0][0] + gameboard[0][1] + gameboard[1][1] + gameboard[1][2]
+				+ gameboard[2][0] == 5*NOUGHT)
+			{return 0;}
+		if (gameboard[2][0] + gameboard[1][0] + gameboard[1][1] + gameboard[0][1]
+				+ gameboard[2][2] == 5*NOUGHT)
+			{return 0;}
+		if (gameboard[0][2] + gameboard[0][1] + gameboard[1][1] + gameboard[1][0]
+				+ gameboard[2][2] == 5*NOUGHT)
+			{return 0;}
+		if (gameboard[2][2] + gameboard[2][1] + gameboard[1][1] + gameboard[1][0]
+				+ gameboard[0][2] == 5*NOUGHT)
+			{return 0;}
+		if(gameboard[0][2] + gameboard[0][1] + gameboard[1][2] + gameboard[2][1]
+				+  gameboard[1][0] == 5*NOUGHT)
+			{return 0;}
+		if(gameboard[0][0] + gameboard[1][0] + gameboard[0][1] + gameboard[2][1]
+				+  gameboard[1][2] == 5*NOUGHT)
+			{return 0;}
+		if(gameboard[2][0] + gameboard[1][0] + gameboard[2][1] + gameboard[0][1]
+				+  gameboard[1][2] == 5*NOUGHT)
+			{return 0;}
+		if(gameboard[2][2] + gameboard[1][2] + gameboard[2][1] + gameboard[0][1]
+				+  gameboard[1][0] == 5*NOUGHT)
+			{return 0;}
+		if (gameboard[0][2] + gameboard[0][1] + gameboard[1][2] + gameboard[1][0]
+				+ gameboard[2][0] == 5*NOUGHT)
+			{return 0;}
+		if (gameboard[0][2] + gameboard[0][1] + gameboard[2][1] + gameboard[2][0]
+				+ gameboard[2][1] == 5*NOUGHT)
+			{return 0;}
+		if (gameboard[0][0] + gameboard[0][1] + gameboard[1][0] + gameboard[2][1]
+				+ gameboard[2][2] == 5*NOUGHT)
+			{return 0;}
+		if (gameboard[0][0] + gameboard[0][1] + gameboard[1][0] + gameboard[1][2]
+				+ gameboard[2][2] == 5*NOUGHT)
+			{return 0;}
+		if (gameboard[2][2] + gameboard[2][1] + gameboard[1][2] + gameboard[1][0]
+				+ gameboard[0][0] == 5*NOUGHT)
+			{return 0;}
+		if (gameboard[2][2] + gameboard[2][1] + gameboard[1][2] + gameboard[0][1]
+				+ gameboard[0][0] == 5*NOUGHT)
+			{return 0;}
+		if (gameboard[2][0] + gameboard[2][1] + gameboard[1][0] + gameboard[0][1]
+				+ gameboard[0][2] == 5*NOUGHT)
+			{return 0;}
+		if (gameboard[2][0] + gameboard[2][1] + gameboard[1][0] + gameboard[1][2]
+				+ gameboard[2][2] == 5*NOUGHT)
+			{return 0;}
+		if (gameboard[2][0] + gameboard[1][0] + gameboard[2][1] + gameboard[0][2]
+				+ gameboard[0][1] == 5*NOUGHT)
+			{return 0;}
+		if (gameboard[2][0] + gameboard[1][0] + gameboard[2][1] + gameboard[1][2]
+				+ gameboard[0][2] == 5*NOUGHT)
+			{return 0;}
+		if (gameboard[0][0] + gameboard[0][2] + gameboard[1][2] + gameboard[2][0]
+				+ gameboard[2][1] == 5*NOUGHT)
+			{return 0;}
+		if (gameboard[2][2] + gameboard[0][1] + gameboard[0][2] + gameboard[1][0]
+				+ gameboard[2][0] == 5*NOUGHT)
+			{return 0;}
+		if (gameboard[0][2] + gameboard[1][0] + gameboard[0][0] + gameboard[2][2]
+				+ gameboard[2][1] == 5*NOUGHT)
+			{return 0;}
+		if (gameboard[2][0] + gameboard[2][2] + gameboard[1][2] + gameboard[0][0]
+				+ gameboard[0][1] == 5*NOUGHT)
+			{return 0;}
+		if (gameboard[0][0] + gameboard[0][1] + gameboard[2][0] + gameboard[2][1]
+				+ gameboard[1][2] == 5*NOUGHT)
+			{return 0;}
+		if (gameboard[2][0] + gameboard[1][0] + gameboard[2][2] + gameboard[1][2]
+				+ gameboard[0][1] == 5*NOUGHT)
+			{return 0;}
+		if (gameboard[0][1] + gameboard[0][2] + gameboard[2][1] + gameboard[2][2]
+				+ gameboard[1][0] == 5*NOUGHT)
+			{return 0;}
+		if (gameboard[0][0] + gameboard[1][0] + gameboard[0][2] + gameboard[1][2]
+				+ gameboard[2][1] == 5*NOUGHT)
+			{return 0;}
+
+		return -2;
+	}
+} // END of Program
+_____________________________________________________________________________________________________________________________________________________
+
+TicTacToeGame->tictactoegameboard.java code ->
+package tictactoegameboard;
+
+public class tictactoegameboard {
+	static int[][] gameboard = new int[3][3];
+	static final int EMPTY = 0;
+	static final int NOUGHT = -1;
+	static final int CROSS = 1;
+
+	public static void main (String [] args) {
+		createBoard(3,3);
+		int turn = 0;
+		int playerVal;
+		int outcome;
+		java.util.Scanner scan = new java.util.Scanner(System.in);
+		do {
+			displayBoard( );
+			playerVal = (turn % 2 == 0)? NOUGHT : CROSS;
+			if (playerVal == NOUGHT) 
+				System.out.println ("\n—O's turn—");
+			else System.out.println("\n—X's turn—" ); 
+			System.out.print("Enter row and column:" ); 
+			try {
+				set(playerVal, scan.nextInt(), scan.nextInt());
+			} catch (Exception ex) 
+			{System.err.println(ex); turn--;}
+			
+			turn ++;
+			outcome = winOrTie( );
+		} while ( outcome == -2 );
+		
+		displayBoard();
+		
+		switch (outcome) {
+		case NOUGHT:
+			System.out.println("O wins!");
+			break;
+		case CROSS:
+			System.out.println("X wins!");
+			break;
+		case 0:
+			System.out.println("Tie.");
+			break;
+		}
+	}
+
+	private static int winOrTie() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	private static void createBoard(int i, int j) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	/* Set a square on the board must be empty */
+	static void set(int val, int row, int col)
+	throws IllegalArgumentException {
+		if (gameboard[row][col] == EMPTY)
+			gameboard[row][col] = val;
+		else throw new IllegalArgumentException
+			("Player already there!");
+	}
+	
+	/* display the board */
+	static void displayBoard() {
+		for(int r=0; r < gameboard.length; r++) {
+			System.out.print("|");
+			for (int c = 0; c < gameboard[r].length; c++)
+			{
+				switch(gameboard[r][c]) {
+				case NOUGHT:
+					System.out.print("O");
+				break;
+				case CROSS:
+					System.out.print("X");
+				break;
+				default: //Empty
+					System.out.print(" ");
+				}
+					System.out.print("|");
+			}
+			System.out.println("\n-------");
+			}
+		}
+}
+_____________________________________________________________________________________________________________________________________________________
+
+Try This 2-1->Sound.java code ->
+/*
+Try This 2-1
+Compute the distance of a lightning 
+strike whose sound takes 7.2 seconds
+to reach you.
+*/
+class Sound {
+	public static void main(String args[]) {
+		double dist;
+		
+		dist = 7.2 * 1100;
+		
+		System.out.println("The lightning is " + dist + " feet away.");
+	}
+}
+_____________________________________________________________________________________________________________________________________________________
+
+Try This 3-1->Help.java code ->
+package Help.java;
+
+/*
+ * 	Try This 3-1
+ * 
+ * 	A simple help system.
+ */
+class Help {
+	public static void main(String[] args)
+		throws java.io.IOException {
+			char choice;
+			
+		System.out.println("Help on:");
+		System.out.println("	1. if");
+		System.out.println("	2. switch");
+		System.out.println("Choose one: ");
+		choice = (char) System.in.read();
+		
+		System.out.println("\n");
+		
+		switch(choice) {
+		case '1':
+			System.out.println("The if:\n");
+			System.out.println("if (condition) statement;");
+			System.out.println("else statement;");
+			break;
+		case '2':
+			System.out.println("The switch:\n");
+			System.out.println("switch(expression) {");
+			System.out.println("	case constant:");
+			System.out.println("		statement sequence");
+			System.out.println("	break;");
+			System.out.println("	// ...");
+			System.out.println("}");
+			break;
+		default:
+			System.out.print("Selection not found.");
+		}
+	}
+}
+_____________________________________________________________________________________________________________________________________________________
+
+Try This 3-2->Help2.java code ->
+package Help2;
+
+/*
+ * 	Try This 3-2
+ * 
+ * 	A simple help system.
+ */
+class Help2 {
+	public static void main(String[] args)
+		throws java.io.IOException {
+		char choice, ignore;
+			
+		do {
+			System.out.println("Help on:");
+			System.out.println("	1. if");
+			System.out.println("	2. switch");
+			System.out.println("	3. for");
+			System.out.println("	4. while");
+			System.out.println("	5. do-while\n");
+			System.out.println("Choose one: ");
+			
+			choice = (char) System.in.read();
+			
+			do {
+				ignore = (char) System.in.read();
+			} while (ignore != '\n' ) ;
+		} while ( choice < '1' | choice > '5') ;
+		
+		switch(choice) {
+		case '1':
+			System.out.println("The if: \n");
+			System.out.println("if (condition) statement;");
+			System.out.println("else statement;");
+			break;
+		case '2':
+			System.out.println("The switch:\n");
+			System.out.println("switch(expression) {");
+			System.out.println("	case constant:");
+			System.out.println("		statement sequence");
+			System.out.println("		break;");
+			System.out.println("	// ...");
+			System.out.println("}");
+			break;
+		case '3':
+			System.out.println("The for:\n" );
+			System.out.print("for(init; condition; iteration)");
+			System.out.println(" statement;");
+			break;
+		case '4':
+			System.out.println("The while: \n");
+			System.out.println("while(condition) statement;");
+			break;
+		case '5':
+			System.out.println("The do-while:\n");
+			System.out.println("do { ");
+			System.out.println(" statement;");
+			System.out.println("} while (condition) ;");
+			break;
+		}
+	}
+}
+_____________________________________________________________________________________________________________________________________________________
+
+Try This 3-3->Help3.java code ->
+package Help3;
+
+/*
+ * 	Try This 3-3
+ * 
+ * 	A simple help system.
+ */
+class Help3 {
+	public static void main(String[] args)
+		throws java.io.IOException {
+		char choice, ignore;
+		
+		for(;;) {
+		do {
+			System.out.println("Help on:");
+			System.out.println("	1. if");
+			System.out.println("	2. switch");
+			System.out.println("	3. for");
+			System.out.println("	4. while");
+			System.out.println("	5. do-while");
+			System.out.println("	6. break" );
+			System.out.println("	7. continue\n");
+			System.out.println("Choose one (q to quit): ");
+			
+			choice = (char) System.in.read();
+			
+			do {
+				ignore = (char) System.in.read();
+			} while (ignore != '\n' ) ;
+		} while ( choice < '1' | choice > '7' & choice != 'q') ;
+		
+		if (choice == 'q') break;
+		
+		System.out.println("\n");
+		
+		switch(choice) {
+		case '1':
+			System.out.println("The if: \n");
+			System.out.println("if (condition) statement;");
+			System.out.println("else statement;");
+			break;
+		case '2':
+			System.out.println("The switch:\n");
+			System.out.println("switch(expression) {");
+			System.out.println("	case constant:");
+			System.out.println("		statement sequence");
+			System.out.println("		break;");
+			System.out.println("	// ...");
+			System.out.println("}");
+			break;
+		case '3':
+			System.out.println("The for:\n" );
+			System.out.print("for(init; condition; iteration)");
+			System.out.println(" statement;");
+			break;
+		case '4':
+			System.out.println("The while: \n");
+			System.out.println("while(condition) statement;");
+			break;
+		case '5':
+			System.out.println("The do-while:\n");
+			System.out.println("do { ");
+			System.out.println(" statement;");
+			System.out.println("} while (condition) ;");
+			break;
+		case '6':
+			System.out.println("The break: \n");
+			System.out.println("break; or break labe ;");
+			break;
+		case '7':
+			System.out.println("The continue: \n");
+			System.out.println("continue; or continue label;");
+			break;
+}
+System.out.println();
+		}
+	}
+}
+_____________________________________________________________________________________________________________________________________________________
+
+Try This 4-1->HelpClassDemo.java->
+package HelpClassDemo.java;
+/*
+ * 	Try This 4-1
+ * 
+ * 	Convert the help system from Try This 3-3 into 
+ * 	a Help Class.
+ */
+
+class Help {
+	void helpOn(int what) {
+		switch (what) {
+				case '1':
+					System.out.println("The if: \n");
+					System.out.println("if (condition) statement;");
+					System.out.println("else statement;");
+					break;
+				case '2':
+					System.out.println("The switch:\n");
+					System.out.println("switch(expression) {");
+					System.out.println("	case constant:");
+					System.out.println("		statement sequence");
+					System.out.println("		break;");
+					System.out.println("	// ...");
+					System.out.println("}");
+					break;
+				case '3':
+					System.out.println("The for:\n" );
+					System.out.print("for(init; condition; iteration)");
+					System.out.println(" statement;");
+					break;
+				case '4':
+					System.out.println("The while: \n");
+					System.out.println("while(condition) statement;");
+					break;
+				case '5':
+					System.out.println("The do-while:\n");
+					System.out.println("do { ");
+					System.out.println(" statement;");
+					System.out.println("} while (condition) ;");
+					break;
+				case '6':
+					System.out.println("The break: \n");
+					System.out.println("break; or break labe ;");
+					break;
+				case '7':
+					System.out.println("The continue: \n");
+					System.out.println("continue; or continue label;");
+					break;
+		}
+		System.out.println();
+	}
+	
+	void showMenu() {
+		System.out.println("Help on:");
+		System.out.println("	1. if");
+		System.out.println("	2. switch");
+		System.out.println("	3. for");
+		System.out.println("	4. while");
+		System.out.println("	5. do-while");
+		System.out.println("	6. break" );
+		System.out.println("	7. continue\n");
+		System.out.println("Choose one (q to quit): ");
+	}
+	
+	boolean isValid (int ch) {
+		if (ch < '1' | ch > '7' & ch != 'q') return false;
+		else return true;
+	}
+	
+}
+	public class HelpClassDemo {
+		public static void main(String[] args)
+		throws java.io.IOException {
+			char choice, ignore;
+			Help hlpobj = new Help () ;
+			
+			for (;;) {
+				do {
+					hlpobj.showMenu();
+					
+					choice = (char) System.in.read();
+					
+					do {
+						ignore = (char) System.in.read();
+					} while (ignore != '\n');
+					
+				} while ( !hlpobj.isValid(choice) );
+				
+				if (choice == 'q') break;
+				
+				hlpobj.helpOn(choice);
+			}
+		}
+	}
+_____________________________________________________________________________________________________________________________________________________
+
+Two-Dimensional Arrays->TwoD.java ->
+package TwoDimensionalArray;
+
+//Demonstrate a two-dimensional array.
+class TwoD {
+	public static void main (String args[]) {
+		int t, i;
+		int table[] [] = new int [3][4];
+		
+		for (t=0; t<3; ++t) {
+			for (i=0; i <4; ++i) {
+				table [t][i] = (t*4)+i+1;
+				System.out.print(table[t][i]+ " ");
+			}
+			System.out.println();
+			}
+		}
+	}
+_____________________________________________________________________________________________________________________________________________________
+
+BoardGameTester.java ->
+
+			// TODO Auto-generated method stub
+				
+			}
+			private static int winOrTie() {
+			// TODO Auto-generated method stub
+			return 0;
+		}
+		
+			private static void displayBoard() {
+			// TODO Auto-generated method stub
+			
+		}
+	
+			
+		}
+			//Create a 3 x 3 board for a TicTacToe Game
+		 private class  TicTacToe {
+			 	static int[][] gameboard = new int[3][3];
+				static final int EMPTY = 0;
+				static final int NOUGHT = -1;
+				static final int CROSS = 1;
+			//Create a 6 x 7 board for a Connect Four Game
+		public class ConnectFour {
+				 static int[][] gameboard = new int[6][7];
+				static final int EMPTY = 0;
+				static final int YELLOW = -1;
+				static final int RED = 1;
+			//Create a 5 x 8 board for a Mastermind Game
+		public class MasterMind {
+				 static int[][] gameboard = new int[5][8];
+				static final int EMPTY = 0;
+				static final int YELLOW = -1;
+				static final int RED = 1;
+				static final int BLUE = 2;
+				static final int GREEN = 3;
+				static final int MAGENTA = 4;
+				static final int ORANGE = 5;
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+private static class TicTacToeGame {
+	static int[][] gameboard = new int[3][3];
+	static final int EMPTY = 0;
+	static final int NOUGHT = -1;
+	static final int CROSS = 1;
+	
+	public static void main(String[] args) {
+		//Create a 3 x 3 board for a Tic-Tac-Toe Game
+		Board TicTacToe [][] = new Board[3][3];
+		int turn = 0;
+		int playerVal;
+		int outcome;
+		java.util.Scanner scan = new java.util.Scanner(System.in);
+		do {
+			displayBoard( );
+			playerVal = (turn %2 == 0)? NOUGHT : CROSS;
+			if (playerVal == NOUGHT)
+				System.out.println ("\n—O's turn—");
+			else System.out.println ("—X's turn—");
+			System.out.print("Enter row and column:");
+			try {
+				set(playerVal, scan.nextInt(), scan.nextInt());
+			} catch (Exception ex)
+			{System.err.println(ex); turn--;}
+			
+			turn ++;
+			outcome = winOrTie( );
+		} while ( outcome == -2 );
+		
+		displayBoard();
+		
+		switch (outcome) {
+		case NOUGHT:
+			System.out.println("O wins!");
+			break;
+		case CROSS:
+			System.out.println("X wins!");
+			break;
+		case 0:
+			System.out.println("Tie.");
+			break;
+		}
+	
+______________________________________________________________________________
+Scrap-
+	private static int[][] TicTacToegameboard = new int[3][3];
+ 			private static final int TicTacToeEMPTY = 0;
+			private static final int NOUGHT = -1;
+			private static final int CROSS = 1;
+			
+	//Create a 3 x 3 board for a TicTacToe Game
+			public static void main1 (String [] args) {
+							createBoard1(3,3);
+							int turn = 0;
+							int playerVal;
+							int outcome;
+							java.util.Scanner scan = new java.util.Scanner(System.in);
+							do {
+								TicTacToedisplayBoard( );
+								playerVal = (turn % 2 == 0)? NOUGHT : CROSS;
+								if (playerVal == NOUGHT) 
+									System.out.println ("\n—O's turn—");
+								else System.out.println("\n—X's turn—" ); 
+								System.out.print("Enter row and column:" ); 
+								try {
+									set(playerVal, scan.nextInt(), scan.nextInt());
+								} catch (Exception ex) 
+								{System.err.println(ex); turn--;}
+								
+								turn ++;
+								outcome = TicTacToeWinOrTie( );
+							} while ( outcome == -2 );
+							
+							TicTacToedisplayBoard();
+							
+							switch (outcome) {
+							case NOUGHT:
+								System.out.println("O wins!");
+								break;
+							case CROSS:
+								System.out.println("X wins!");
+								break;
+							case 0:
+								System.out.println("Tie.");
+								break;
+							}
+						}
+
+						static void createBoard1(int rows, int cols) {
+							//TODO Initialize the gameboard
+							int r, c;
+							int createBoard [][] = new int [3][3];
+							
+							for (r=0; r < 3; ++r) {
+								for (c=0; c < 3; ++c) {
+									createBoard[r][c]= (r*1)+(c*1);
+									System.out.print(createBoard[r][c] + " ");
+								}
+								System.out.println();
+							}
+						}
+
+						/* Set a square on the board must be empty */
+						static void set(int val, int row, int col)
+						throws IllegalArgumentException {
+							if (TicTacToegameboard[row][col] == TicTacToeEMPTY)
+								TicTacToegameboard[row][col] = val;
+							else throw new IllegalArgumentException
+								("Player already there!");
+						}
+						
+						/* display the board */
+						static void TicTacToedisplayBoard() {
+							for(int r=0; r < TicTacToegameboard.length; r++) {
+								System.out.print("|");
+								for (int c = 0; c < TicTacToegameboard[r].length; c++)
+								{
+									switch(TicTacToegameboard[r][c]) {
+									case NOUGHT:
+										System.out.print("O");
+									break;
+									case CROSS:
+										System.out.print("X");
+									break;
+									default: //Empty
+										System.out.print(" ");
+									}
+										System.out.print("|");
+								}
+								System.out.println("\n-------");
+								}
+							}
+				
+				static int TicTacToeWinOrTie() {
+					//TODO Determine whether X or O won or there is a tie
+					if (TicTacToegameboard[0][0] + TicTacToegameboard[0][1] + TicTacToegameboard[0][2] == 3*NOUGHT)
+						{return NOUGHT;}
+					if (TicTacToegameboard[1][0] + TicTacToegameboard[1][1] + TicTacToegameboard[1][2] == 3*NOUGHT)
+						{return NOUGHT;}
+					if (TicTacToegameboard[2][0] + TicTacToegameboard[2][1] + TicTacToegameboard[2][2] == 3*NOUGHT)
+						{return NOUGHT;}
+					
+					if (TicTacToegameboard[0][0] + TicTacToegameboard[1][0] + TicTacToegameboard[2][0] == 3*NOUGHT)
+						{return NOUGHT;}
+					if (TicTacToegameboard[0][1] + TicTacToegameboard[1][1] + TicTacToegameboard[2][1] == 3*NOUGHT)
+						{return NOUGHT;}
+					if (TicTacToegameboard[0][2] + TicTacToegameboard[1][2] + TicTacToegameboard[2][2] == 3*NOUGHT)
+						{return NOUGHT;}
+					if (TicTacToegameboard[0][0] + TicTacToegameboard[1][1] + TicTacToegameboard[2][2] == 3*NOUGHT)
+						{return NOUGHT;}
+					if (TicTacToegameboard[0][2] + TicTacToegameboard[1][1] + TicTacToegameboard[2][0] == 3*NOUGHT)
+						{return NOUGHT;}
+					
+					if (TicTacToegameboard[0][0] + TicTacToegameboard[0][1] + TicTacToegameboard[0][2] == 3*CROSS)
+						{return CROSS;}
+					if (TicTacToegameboard[1][0] + TicTacToegameboard[1][1] + TicTacToegameboard[1][2] == 3*CROSS)
+						{return CROSS;}
+					if (TicTacToegameboard[2][0] + TicTacToegameboard[2][1] + TicTacToegameboard[2][2] == 3*CROSS)
+						{return CROSS;}
+					
+					if (TicTacToegameboard[0][0] + TicTacToegameboard[1][0] + TicTacToegameboard[2][0] == 3*CROSS)
+						{return CROSS;}
+					if (TicTacToegameboard[0][1] + TicTacToegameboard[1][1] + TicTacToegameboard[2][1] == 3*CROSS)
+						{return CROSS;}
+					if (TicTacToegameboard[0][2] + TicTacToegameboard[1][2] + TicTacToegameboard[2][2] == 3*CROSS)
+						{return CROSS;}
+					if (TicTacToegameboard[0][0] + TicTacToegameboard[1][1] + TicTacToegameboard[2][2] == 3*CROSS)
+						{return CROSS;}
+					if (TicTacToegameboard[0][2] + TicTacToegameboard[1][1] + TicTacToegameboard[2][0] == 3*CROSS)
+						{return CROSS;}
+					
+					if (TicTacToegameboard[2][2] + TicTacToegameboard[1][2] + TicTacToegameboard[1][1] + TicTacToegameboard[0][1]
+							+ TicTacToegameboard[2][0] == 5*NOUGHT)
+						{return 0;}
+					if (TicTacToegameboard[0][0] + TicTacToegameboard[1][0] + TicTacToegameboard[1][1] + TicTacToegameboard[2][1] 
+							+  TicTacToegameboard[0][2] == 5*NOUGHT)
+						{return 0;}
+					if (TicTacToegameboard[0][2] + TicTacToegameboard[1][2] + TicTacToegameboard[1][1] + TicTacToegameboard[2][1]
+							+ TicTacToegameboard[0][0] == 5*NOUGHT)
+						{return 0;}
+					if (TicTacToegameboard[2][0] + TicTacToegameboard[2][1] + TicTacToegameboard[1][1] + TicTacToegameboard[1][2]
+							+ TicTacToegameboard[0][0] == 5*NOUGHT)
+						{return 0;}
+					if (TicTacToegameboard[0][0] + TicTacToegameboard[0][1] + TicTacToegameboard[1][1] + TicTacToegameboard[1][2]
+							+ TicTacToegameboard[2][0] == 5*NOUGHT)
+						{return 0;}
+					if (TicTacToegameboard[2][0] + TicTacToegameboard[1][0] + TicTacToegameboard[1][1] + TicTacToegameboard[0][1]
+							+ TicTacToegameboard[2][2] == 5*NOUGHT)
+						{return 0;}
+					if (TicTacToegameboard[0][2] + TicTacToegameboard[0][1] + TicTacToegameboard[1][1] + TicTacToegameboard[1][0]
+							+ TicTacToegameboard[2][2] == 5*NOUGHT)
+						{return 0;}
+					if (TicTacToegameboard[2][2] + TicTacToegameboard[2][1] + TicTacToegameboard[1][1] + TicTacToegameboard[1][0]
+							+ TicTacToegameboard[0][2] == 5*NOUGHT)
+						{return 0;}
+					if(TicTacToegameboard[0][2] + TicTacToegameboard[0][1] + TicTacToegameboard[1][2] + TicTacToegameboard[2][1]
+							+  TicTacToegameboard[1][0] == 5*NOUGHT)
+						{return 0;}
+					if(TicTacToegameboard[0][0] + TicTacToegameboard[1][0] + TicTacToegameboard[0][1] + TicTacToegameboard[2][1]
+							+  TicTacToegameboard[1][2] == 5*NOUGHT)
+						{return 0;}
+					if(TicTacToegameboard[2][0] + TicTacToegameboard[1][0] + TicTacToegameboard[2][1] + TicTacToegameboard[0][1]
+							+  TicTacToegameboard[1][2] == 5*NOUGHT)
+						{return 0;}
+					if(TicTacToegameboard[2][2] + TicTacToegameboard[1][2] + TicTacToegameboard[2][1] + TicTacToegameboard[0][1]
+							+  TicTacToegameboard[1][0] == 5*NOUGHT)
+						{return 0;}
+					if (TicTacToegameboard[0][2] + TicTacToegameboard[0][1] + TicTacToegameboard[1][2] + TicTacToegameboard[1][0]
+							+ TicTacToegameboard[2][0] == 5*NOUGHT)
+						{return 0;}
+					if (TicTacToegameboard[0][2] + TicTacToegameboard[0][1] + TicTacToegameboard[2][1] + TicTacToegameboard[2][0]
+							+ TicTacToegameboard[2][1] == 5*NOUGHT)
+						{return 0;}
+					if (TicTacToegameboard[0][0] + TicTacToegameboard[0][1] + TicTacToegameboard[1][0] + TicTacToegameboard[2][1]
+							+ TicTacToegameboard[2][2] == 5*NOUGHT)
+						{return 0;}
+					if (TicTacToegameboard[0][0] + TicTacToegameboard[0][1] + TicTacToegameboard[1][0] + TicTacToegameboard[1][2]
+							+ TicTacToegameboard[2][2] == 5*NOUGHT)
+						{return 0;}
+					if (TicTacToegameboard[2][2] + TicTacToegameboard[2][1] + TicTacToegameboard[1][2] + TicTacToegameboard[1][0]
+							+ TicTacToegameboard[0][0] == 5*NOUGHT)
+						{return 0;}
+					if (TicTacToegameboard[2][2] + TicTacToegameboard[2][1] + TicTacToegameboard[1][2] + TicTacToegameboard[0][1]
+							+ TicTacToegameboard[0][0] == 5*NOUGHT)
+						{return 0;}
+					if (TicTacToegameboard[2][0] + TicTacToegameboard[2][1] + TicTacToegameboard[1][0] + TicTacToegameboard[0][1]
+							+ TicTacToegameboard[0][2] == 5*NOUGHT)
+						{return 0;}
+					if (TicTacToegameboard[2][0] + TicTacToegameboard[2][1] + TicTacToegameboard[1][0] + TicTacToegameboard[1][2]
+							+ TicTacToegameboard[2][2] == 5*NOUGHT)
+						{return 0;}
+					if (TicTacToegameboard[2][0] + TicTacToegameboard[1][0] + TicTacToegameboard[2][1] + TicTacToegameboard[0][2]
+							+ TicTacToegameboard[0][1] == 5*NOUGHT)
+						{return 0;}
+					if (TicTacToegameboard[2][0] + TicTacToegameboard[1][0] + TicTacToegameboard[2][1] + TicTacToegameboard[1][2]
+							+ TicTacToegameboard[0][2] == 5*NOUGHT)
+						{return 0;}
+					if (TicTacToegameboard[0][0] + TicTacToegameboard[0][2] + TicTacToegameboard[1][2] + TicTacToegameboard[2][0]
+							+ TicTacToegameboard[2][1] == 5*NOUGHT)
+						{return 0;}
+					if (TicTacToegameboard[2][2] + TicTacToegameboard[0][1] + TicTacToegameboard[0][2] + TicTacToegameboard[1][0]
+							+ TicTacToegameboard[2][0] == 5*NOUGHT)
+						{return 0;}
+					if (TicTacToegameboard[0][2] + TicTacToegameboard[1][0] + TicTacToegameboard[0][0] + TicTacToegameboard[2][2]
+							+ TicTacToegameboard[2][1] == 5*NOUGHT)
+						{return 0;}
+					if (TicTacToegameboard[2][0] + TicTacToegameboard[2][2] + TicTacToegameboard[1][2] + TicTacToegameboard[0][0]
+							+ TicTacToegameboard[0][1] == 5*NOUGHT)
+						{return 0;}
+					if (TicTacToegameboard[0][0] + TicTacToegameboard[0][1] + TicTacToegameboard[2][0] + TicTacToegameboard[2][1]
+							+ TicTacToegameboard[1][2] == 5*NOUGHT)
+						{return 0;}
+					if (TicTacToegameboard[2][0] + TicTacToegameboard[1][0] + TicTacToegameboard[2][2] + TicTacToegameboard[1][2]
+							+ TicTacToegameboard[0][1] == 5*NOUGHT)
+						{return 0;}
+					if (TicTacToegameboard[0][1] + TicTacToegameboard[0][2] + TicTacToegameboard[2][1] + TicTacToegameboard[2][2]
+							+ TicTacToegameboard[1][0] == 5*NOUGHT)
+						{return 0;}
+					if (TicTacToegameboard[0][0] + TicTacToegameboard[1][0] + TicTacToegameboard[0][2] + TicTacToegameboard[1][2]
+							+ TicTacToegameboard[2][1] == 5*NOUGHT)
+						{return 0;}
+
+					return -2;
+				}
+
+		//Create a 6 x 7 board for a Connect Four Game
+				private static int[][] ConnectFourgameboard = new int [7][6];
+					static final int EMPTY = 0;
+					static final int YELLOW = -1;
+					static final int RED = 1;
+					
+					public static void main2 (String [] args) {
+						createBoard2(7,6);
+						int turn = 0;
+						int disk;
+						int outcome;
+						java.util.Scanner scan = new java.util.Scanner(System.in);
+						do {
+							displayBoard( );
+							disk = (turn % 1 == 0)? YELLOW : RED;
+							if (disk== YELLOW)
+								System.out.println ("\n—Yellow's turn—");
+							else System.out.println ("\n—Red's turn—");
+							System.out.print("Drop a disk at a column (0-6):" );
+							try {
+								set(disk, scan.nextInt(), scan.nextInt());
+							} catch (Exception ex)
+							{System.err.println(ex); turn--;}
+							
+							turn ++;
+							outcome = winOrTie( );
+						} while ( outcome == -2);
+						
+						displayBoard();
+						
+						switch (outcome) {
+						case YELLOW:
+							System.out.println("Yellow wins!");
+							break;
+						case RED:
+							System.out.println("Red wins!");
+							break;
+						case 0:
+							System.out.println("Tie.");
+							break;
+						}
+					}
+					static int winOrTie() {
+						//TODO Determine whether Yellow or Red won or there is a tie
+						return 0;
+					}
+					
+					/* Set a board must be empty */
+					static void set1(int val, int row, int col)
+					throws IllegalArgumentException {
+						if (ConnectFourgameboard[row][col]== EMPTY)
+							ConnectFourgameboard[row][col] = val;
+						else throw new IllegalArgumentException
+							("Row is full!");
+					}
+					
+					/* display the board */
+					static void ConnectFourdisplayBoard() {
+						for(int r=0; r < ConnectFourgameboard.length; r++) {
+							System.out.print("|");
+							for (int c=0; c < ConnectFourgameboard[r].length; c++)
+							{
+								switch(ConnectFourgameboard[r][c]) {
+								case YELLOW:
+									System.out.print("Y");
+								break;
+								case RED:
+									System.out.print("R");
+								break;
+								default: //Empty
+									System.out.print(" ");
+								}
+									System.out.print("|");
+								}
+							System.out.println("\n             ");
+							}
+						}					
+
+					public static boolean checkBoard(int[][] values) {
+						
+						return checkVer(values) || checkHor(values) || checkDia(values);
+				
+					}
+
+					 public static boolean checkVer1(int[][] values) {
+						  // Going through the array vertically
+						 
+						  for (int i = 0; i < values[0].length; i++) {
+						   int start = values[0][i];
+						   int count = 1;
+						   for (int j = 1; j < values.length; j++) {
+						    if (start == values[j][i] && start != 0) {
+						     count++;
+						    } else {
+						     start = values[j][i];
+						     count = 1;
+						    }
+						 
+						    if (count == 4) {
+						     return true;
+						    }
+						   }
+						  }
+						 
+						  return false;
+						 
+						 }
+						 
+						 public static boolean checkHor1(int[][] values) {
+							 // Going through the array horizontally
+							  
+							  for (int i = 1; i < values.length; i++) {
+							   int start = values[i][0];
+							   int count = 1;
+							   for (int j = 1; j < values[i].length; j++) {
+							    if (start == values[i][j] && start != 0) {
+							     count++;
+							    } else {
+							     start = values[i][j];
+							     count = 1;
+							    }
+							 
+							    if (count == 4) {
+							     return true;
+							    }
+							   }
+							  }
+							 
+							  return false;
+							 
+							 }
+							 
+							 public static boolean checkDia1(int[][] values) {
+							 
+							  // From upper left to lower right
+							  // Go through the row
+							   
+							  for (int i = 0; i < values.length; i++) {
+							   int start = values[i][0];
+							   int count = 1;
+							   for (int j = i+1, k = 1; j < values.length && k < values[0].length; j++, k++) {
+							    if (start == values[j][k] && start != 0) {
+							     count++;
+							    } else {
+							     start = values[j][k];
+							     count = 1;
+							    }
+							    if (count == 4) {
+							     return true;
+							    }
+							   }
+							  }
+							 
+							  // Going through the column
+							   
+							  for (int i = 0; i < values[0].length; i++) {
+							   int start = values[0][i];
+							   int count = 1;
+							   for (int j = i+1, k = 1; j < values[0].length && k < values.length; j++, k++) {
+							    if (start == values[k][j] && start != 0) {
+							     count++;
+							    } else {
+							     start = values[k][j];
+							     count = 1;
+							    }
+							 
+							    if (count == 4) {
+							     return true;
+							    }
+							   }
+							  }
+							 
+							  // From upper right to lower left
+							  // Go through the column
+							   
+							  for (int i = 0; i < values[0].length; i++) {
+							   int start = values[0][i];
+							   int count = 1;
+							   for (int j = 1, k = i-1; j < values.length && k >= 0; j++, k--) {
+							    if (start == values[j][k] && start != 0) {
+							     count++;
+							    } else {
+							     start = values[j][k];
+							     count = 1;
+							    }
+							    if (count == 4) {
+							     return true;
+							    }
+							   }
+							  }
+							 
+							  // Going through the row
+							   
+							  for (int i = 0; i < values.length; i++) {
+							   int start = values[i][values[i].length-1];
+							   int count = 1;
+							   for (int j = i+1, k = values[0].length-2; j < values.length && k >= 0; j++, k--) {
+							    if (start == values[j][k] && start != 0) {
+							     count++;
+							    } else {
+							     start = values[j][k];
+							     count = 1;
+							    }
+							    if (count == 4) {
+							     return true;
+							    }
+							   }
+							  }
+							   
+							  return false;
+							 
+							 }
+
+					
+	private static boolean checkDia(int[][] values) {
+						// TODO Auto-generated method stub
+						return false;
+					}
+
+	private static boolean cherHor(int[][] values) {
+						// TODO Auto-generated method stub
+						return false;
+					}
+
+	private static boolean checkVer(int[][] values) {
+						// TODO Auto-generated method stub
+						return false;
+					}
+
+						//Create a 3 x 3 board for a TicTacToe Game
+						public static void main3 (String [] args) {
+										createBoard2(6,7);
+										int turn = 0;
+										int playerVal;
+										int outcome;
+										java.util.Scanner scan = new java.util.Scanner(System.in);
+										do {
+											displayBoard( );
+											playerVal = (turn % 2 == 0)? YELLOW : RED;
+											if (playerVal == YELLOW) 
+												System.out.println ("\n—Yellow's turn—");
+											else System.out.println("\n—Red's turn—" ); 
+											System.out.print("Enter a row:" ); 
+											try {
+												set(playerVal, scan.nextInt(), scan.nextInt());
+											} catch (Exception ex) 
+											{System.err.println(ex); turn--;}
+											
+											turn ++;
+											outcome = TicTacToeWinOrTie( );
+										} while ( outcome == -2 );
+
+						displayBoard();
+						
+						switch(outcome) {
+						case YELLOW:
+							System.out.println("Yellow wins!");
+							break;
+						case RED:
+							System.out.println("Red wins!");
+							break;
+						case 0:
+							System.out.println("Tie.");
+							break;
+						}
+					}
+					private static void createBoard2(int i, int j) {
+							// TODO Auto-generated method stub
+							
+						}
+
+						/* Set an empty board for YELLOW and RED*/
+						static void set(int val, int row)
+						throws IllegalArgumentException {
+							if (ConnectFourgameboard[row] == ConnectFourEMPTY)
+								ConnecFourgameboard[row] = val;
+							else throw new IllegalArgumentException
+								("Row is full!");
+						}
+						
+					/*display the board */
+						static void displayBoard() {
+							
+						}
+						}
+						
+						
+		//Create a 5 x 8 board for a Mastermind Game
+				 public class MasterMind {
+						int[][] MasterMindgameboard = new int[5][8];
+						static final int EMPTY = 0;
+						static final int YELLOW = -1;
+						static final int RED = 1;
+						static final int BLUE = 2;
+						static final int GREEN = 3;
+						static final int MAGENTA = 4;
+						static final int ORANGE = 5;	
+						
+										
+							}
+						// END of Program
+
+_____________________________________________________________________________________________________________________________________________________
+BoardGameTester.java [rough] -
+package games.board;
+import games.boards.*;
+
+public class BoardGameTester {
+	
+	public static void main (String [] args) {
+		 Board.setCell();
+		 
+		Outcome outcome = Outcome.PLAYER1_WIN	;
+		
+		switch(outcome) {
+		
+		case PLAYER1_WIN 		: { System.out.println("PLAYER1_WIN"); break; }
+		case PLAYER2_WIN		 	: {System.out.println("PLAYER2_WIN"); break; }
+		case CONTINUE			: {System.out.println("CONTINUE"); break; }
+		case TIE				: {System.out.println("TIE"); break; }
+		}
+		
+	}
+}
+_____________________________________________________________________________________________________________________________________________________
+BoardGameTester.java [rough] -
+package games.board;
+import games.boards.*;
+
+public class BoardGameTester {
+	
+	public static void main (String [] args) {
+		Player player = Player.FIRST	;
+		
+		switch(player) {
+		
+		case FIRST 		: {System.out.println("FIRST"); break; }
+		case SECOND		 	: {System.out.println("SECOND"); break; }
+		}
+		
+	}
+}	
+_____________________________________________________________________________________________________________________________________________________
+BoardGameTester.java [rough] -
+package games.board;
+import games.boards.*;
+
+public class BoardGameTester {
+	
+	public static void main (String [] args) {
+		Mark mark = Mark.EMPTY	;
+		
+		switch(mark) {
+		
+		case EMPTY 		: {System.out.println("EMPTY"); break; }
+		case NOUGHT	: {System.out.println("NOUGHT"); break; }
+		case CROSS 		: {System.out.println("CROSS"); break; }
+		case YELLOW 		: {System.out.println("YELLOW"); break; }
+		case RED 		: {System.out.println("RED"); break; }
+		case BLUE 		: {System.out.println("BLUE"); break; }
+		case GREEN 		: {System.out.println("GREEN"); break; }
+		case MAGENTA 		: {System.out.println("MAGENTA"); break; }
+		case ORANGE 		: {System.out.println("ORANGE"); break; }
+		}
+		
+	}
+}			
+_____________________________________________________________________________________________________________________________________________________
+BoardGameTester.java [rough] -
+package games.board;
+import games.boards.*;
+
+public class BoardGameTester {
+	
+	public static void main (String [] args) {		 
+		Outcome outcome = Outcome.PLAYER1_WIN	;
+		
+		Outcome[] values = Outcome.values();
+		
+		for(Outcome aOutcome : values) {
+			System.out.println(aOutcome) ;
+		}
+	}
+}
+_____________________________________________________________________________________________________________________________________________________
+package games.board;
+import games.boards.*;
+
+public class BoardGameTester {
+	
+	public static void main (String [] args) {		 
+		Player player = Player.FIRST	;
+		
+		Player[] values = Player.values();
+		
+		for(Player aPlayer : values) {
+			System.out.println(aPlayer) ;
+		}
+	}
+}
+_____________________________________________________________________________________________________________________________________________________
+BoardGameTester.java [rough] -
+package games.board;
+import games.boards.*;
+
+public class BoardGameTester {
+	
+	public static void main (String [] args) {		 
+		Player player = Player.FIRST	;
+						
+		switch(player) {
+		case FIRST:
+			System.out.println("FIRST");
+			break;
+		case SECOND:
+			System.out.println("SECOND");
+			break;
+
+			}
+		}
+	}
+
+_____________________________________________________________________________________________________________________________________________________
+BoardGameTester.java [TicTacToeGame finished coding, ConnectFour & MasterMind still need working] -
+package games.board;
+import games.boards.*;
+import games.board.Board;
+import games.board.Cell;
+import games.board.Player;
+import games.board.Outcome;
+import games.board.Mark;
+import java.util.Scanner;
+
+public class BoardGameTester {
+	static int[][] tttgameboard = new int[3][3];
+			static final int tttEMPTY = 0;
+			static final int tttNOUGHT = -1;
+			static final int tttCROSS = 1;
+	static int[][] cfgameboard = new int [6][7];
+			static final int cfEMPTY= 0;
+			static final int cfYELLOW = -2;
+			static final int cfRED = 2;
+	static int[][] mmgameboard = new int [5][8];
+		static final int mmEMPTY = 0;
+		static final int mmYELLOW = -3;
+		static final int mmRED = 3;
+		static final int mmGREEN = -4;
+		static final int mmBLUE = 4;
+		static final int mmMAGENTA = -5;
+		static final int mmORANGE = 5;
+		
+	public static void main(String[] args) {
+       // 3x3 board for Tic Tac Toe
+       Board tttgameboard = new Board (3,3);
+       				int turn = 0;
+       				int Player;
+       				int outcome;
+       				java.util.Scanner scan = new java.util.Scanner(System.in);
+       				do {
+       					tttdisplayBoard( );
+       					Player = (turn % 2 == 0)? tttNOUGHT : tttCROSS;
+       					if (Player == tttNOUGHT)
+       						System.out.println ("\n—O's turn—");
+       					else System.out.println("\n—X's turn—");
+       					System.out.print("Enter row and column:" );
+       					try {
+       						set(Player, scan.nextInt(), scan.nextInt());
+       					} catch (Exception ex)
+       					{System.err.println(ex); turn--;}
+       					
+       					turn ++;
+       					outcome = tttwinOrTie( );
+       				} while (outcome == -2);
+       				
+       				tttdisplayBoard();
+       				
+       				switch (outcome) {
+       				case tttNOUGHT:
+       					System.out.println("O wins!");
+       					break;
+       				case tttCROSS:
+       					System.out.println("X wins!");
+       					break;
+       				case 0:
+       					System.out.println("Tie.");
+       					break;
+       				}
+	}
+	/* Set a square on the board must be empty */
+			static void set(int val, int row, int col)
+			throws IllegalArgumentException {
+				if (tttgameboard[row][col] == tttEMPTY)
+					tttgameboard[row][col] = val;
+				else throw new IllegalArgumentException
+					("Player already there!");
+			}
+	/* display the board */
+			static void tttdisplayBoard() {
+				for(int r=0; r < tttgameboard.length; r++) {
+					System.out.print("|");
+					for(int c=0; c < tttgameboard[r].length; c++)
+					{
+						switch(tttgameboard[r][c]) {
+						case tttNOUGHT:
+							System.out.print("O");
+						break;
+						case tttCROSS:
+							System.out.print("X");
+						break;
+						default: //Empty
+							System.out.print(" ");
+						}
+							System.out.print("|");
+					}
+					System.out.println("\n-------");
+				}
+			}
+			public static void tttcreateBoard(int rows, int cols) {
+				//TODO Initialize the Tic Tac Toe gameboard
+				int r, c;
+				int tttcreateBoard [][] = new int [3][3];
+				
+				for (r=0; r < 3; ++r) {
+					for (c=0; c < 3; ++c) {
+						tttcreateBoard[r][c]=(r*1)+(c*1);
+						System.out.print(tttcreateBoard[r][c] + " ");
+					}
+					System.out.println();
+				}
+			}
+			
+			static int tttwinOrTie() {
+				//TODO Determine whether X or O won or there is a tie in Tic Tac Toe 
+			if (tttgameboard[0][0] + tttgameboard[0][1] + tttgameboard[0][2] == 3*tttNOUGHT)
+				{return tttNOUGHT;}
+			if (tttgameboard[1][0] + tttgameboard[1][1] + tttgameboard[1][2] == 3*tttNOUGHT)
+				{return tttNOUGHT;}
+			if (tttgameboard[2][0] + tttgameboard[2][1] + tttgameboard[2][2] == 3*tttNOUGHT)
+				{return tttNOUGHT;}
+			
+			if (tttgameboard[0][0] + tttgameboard[1][0] + tttgameboard[2][0] == 3*tttNOUGHT)
+			{return tttNOUGHT;}
+		if (tttgameboard[0][1] + tttgameboard[1][1] + tttgameboard[2][1] == 3*tttNOUGHT)
+			{return tttNOUGHT;}
+		if (tttgameboard[0][2] + tttgameboard[1][2] + tttgameboard[2][2] == 3*tttNOUGHT)
+			{return tttNOUGHT;}
+		if (tttgameboard[0][0] + tttgameboard[1][1] + tttgameboard[2][2] == 3*tttNOUGHT)
+			{return tttNOUGHT;}
+		if (tttgameboard[0][2] + tttgameboard[1][1] + tttgameboard[2][0] == 3*tttNOUGHT)
+			{return tttNOUGHT;}
+		
+		if (tttgameboard[0][0] + tttgameboard[0][1] + tttgameboard[0][2] == 3*tttCROSS)
+			{return tttCROSS;}
+		if (tttgameboard[1][0] + tttgameboard[1][1] + tttgameboard[1][2] == 3*tttCROSS)
+			{return tttCROSS;}
+		if (tttgameboard[2][0] + tttgameboard[2][1] + tttgameboard[2][2] == 3*tttCROSS)
+			{return tttCROSS;}
+		
+		if (tttgameboard[0][0] + tttgameboard[1][0] + tttgameboard[2][0] == 3*tttCROSS)
+			{return tttCROSS;}
+		if (tttgameboard[0][1] + tttgameboard[1][1] + tttgameboard[2][1] == 3*tttCROSS)
+			{return tttCROSS;}
+		if (tttgameboard[0][2] + tttgameboard[1][2] + tttgameboard[2][2] == 3*tttCROSS)
+			{return tttCROSS;}
+		if (tttgameboard[0][0] + tttgameboard[1][1] + tttgameboard[2][2] == 3*tttCROSS)
+			{return tttCROSS;}
+		if (tttgameboard[0][2] + tttgameboard[1][1] + tttgameboard[2][0] == 3*tttCROSS)
+			{return tttCROSS;}
+		
+		if (tttgameboard[2][2] + tttgameboard[1][2] + tttgameboard[1][1] + tttgameboard[0][1]
+				+ tttgameboard[2][0] == 5*tttNOUGHT)
+			{return 0;}
+		if (tttgameboard[0][0] + tttgameboard[1][0] + tttgameboard[1][1] + tttgameboard[2][1] 
+				+  tttgameboard[0][2] == 5*tttNOUGHT)
+			{return 0;}
+		if (tttgameboard[0][2] + tttgameboard[1][2] + tttgameboard[1][1] + tttgameboard[2][1]
+				+ tttgameboard[0][0] == 5*tttNOUGHT)
+			{return 0;}
+		if (tttgameboard[2][0] + tttgameboard[2][1] + tttgameboard[1][1] + tttgameboard[1][2]
+				+ tttgameboard[0][0] == 5*tttNOUGHT)
+			{return 0;}
+		if (tttgameboard[0][0] + tttgameboard[0][1] + tttgameboard[1][1] + tttgameboard[1][2]
+				+ tttgameboard[2][0] == 5*tttNOUGHT)
+			{return 0;}
+		if (tttgameboard[2][0] + tttgameboard[1][0] + tttgameboard[1][1] + tttgameboard[0][1]
+				+ tttgameboard[2][2] == 5*tttNOUGHT)
+			{return 0;}
+		if (tttgameboard[0][2] + tttgameboard[0][1] + tttgameboard[1][1] + tttgameboard[1][0]
+				+ tttgameboard[2][2] == 5*tttNOUGHT)
+			{return 0;}
+		if (tttgameboard[2][2] + tttgameboard[2][1] + tttgameboard[1][1] + tttgameboard[1][0]
+				+ tttgameboard[0][2] == 5*tttNOUGHT)
+			{return 0;}
+		if(tttgameboard[0][2] + tttgameboard[0][1] + tttgameboard[1][2] + tttgameboard[2][1]
+				+  tttgameboard[1][0] == 5*tttNOUGHT)
+			{return 0;}
+		if(tttgameboard[0][0] + tttgameboard[1][0] + tttgameboard[0][1] + tttgameboard[2][1]
+				+  tttgameboard[1][2] == 5*tttNOUGHT)
+			{return 0;}
+		if(tttgameboard[2][0] + tttgameboard[1][0] + tttgameboard[2][1] + tttgameboard[0][1]
+				+  tttgameboard[1][2] == 5*tttNOUGHT)
+			{return 0;}
+		if(tttgameboard[2][2] + tttgameboard[1][2] + tttgameboard[2][1] + tttgameboard[0][1]
+				+  tttgameboard[1][0] == 5*tttNOUGHT)
+			{return 0;}
+		if (tttgameboard[0][2] + tttgameboard[0][1] + tttgameboard[1][2] + tttgameboard[1][0]
+				+ tttgameboard[2][0] == 5*tttNOUGHT)
+			{return 0;}
+		if (tttgameboard[0][2] + tttgameboard[0][1] + tttgameboard[2][1] + tttgameboard[2][0]
+				+ tttgameboard[2][1] == 5*tttNOUGHT)
+			{return 0;}
+		if (tttgameboard[0][0] + tttgameboard[0][1] + tttgameboard[1][0] + tttgameboard[2][1]
+				+ tttgameboard[2][2] == 5*tttNOUGHT)
+			{return 0;}
+		if (tttgameboard[0][0] + tttgameboard[0][1] + tttgameboard[1][0] + tttgameboard[1][2]
+				+ tttgameboard[2][2] == 5*tttNOUGHT)
+			{return 0;}
+		if (tttgameboard[2][2] + tttgameboard[2][1] + tttgameboard[1][2] + tttgameboard[1][0]
+				+ tttgameboard[0][0] == 5*tttNOUGHT)
+			{return 0;}
+		if (tttgameboard[2][2] + tttgameboard[2][1] + tttgameboard[1][2] + tttgameboard[0][1]
+				+ tttgameboard[0][0] == 5*tttNOUGHT)
+			{return 0;}
+		if (tttgameboard[2][0] + tttgameboard[2][1] + tttgameboard[1][0] + tttgameboard[0][1]
+				+ tttgameboard[0][2] == 5*tttNOUGHT)
+			{return 0;}
+		if (tttgameboard[2][0] + tttgameboard[2][1] + tttgameboard[1][0] + tttgameboard[1][2]
+				+ tttgameboard[2][2] == 5*tttNOUGHT)
+			{return 0;}
+		if (tttgameboard[2][0] + tttgameboard[1][0] + tttgameboard[2][1] + tttgameboard[0][2]
+				+ tttgameboard[0][1] == 5*tttNOUGHT)
+			{return 0;}
+		if (tttgameboard[2][0] + tttgameboard[1][0] + tttgameboard[2][1] + tttgameboard[1][2]
+				+ tttgameboard[0][2] == 5*tttNOUGHT)
+			{return 0;}
+		if (tttgameboard[0][0] + tttgameboard[0][2] + tttgameboard[1][2] + tttgameboard[2][0]
+				+ tttgameboard[2][1] == 5*tttNOUGHT)
+			{return 0;}
+		if (tttgameboard[2][2] + tttgameboard[0][1] + tttgameboard[0][2] + tttgameboard[1][0]
+				+ tttgameboard[2][0] == 5*tttNOUGHT)
+			{return 0;}
+		if (tttgameboard[0][2] + tttgameboard[1][0] + tttgameboard[0][0] + tttgameboard[2][2]
+				+ tttgameboard[2][1] == 5*tttNOUGHT)
+			{return 0;}
+		if (tttgameboard[2][0] + tttgameboard[2][2] + tttgameboard[1][2] + tttgameboard[0][0]
+				+ tttgameboard[0][1] == 5*tttNOUGHT)
+			{return 0;}
+		if (tttgameboard[0][0] + tttgameboard[0][1] + tttgameboard[2][0] + tttgameboard[2][1]
+				+ tttgameboard[1][2] == 5*tttNOUGHT)
+			{return 0;}
+		if (tttgameboard[2][0] + tttgameboard[1][0] + tttgameboard[2][2] + tttgameboard[1][2]
+				+ tttgameboard[0][1] == 5*tttNOUGHT)
+			{return 0;}
+		if (tttgameboard[0][1] + tttgameboard[0][2] + tttgameboard[2][1] + tttgameboard[2][2]
+				+ tttgameboard[1][0] == 5*tttNOUGHT)
+			{return 0;}
+		if (tttgameboard[0][0] + tttgameboard[1][0] + tttgameboard[0][2] + tttgameboard[1][2]
+				+ tttgameboard[2][1] == 5*tttNOUGHT)
+			{return 0;}
+
+		return -2;
+	}
+       // 6x7 board for Connect Four
+       Board cfgameboard = new Board (6,7);
+ 
+       // 5x8 board for Mastermind
+       Board mmgameboard = new Board (5,8);    
+ 
+ 
+       System.out.println (" Tic Tac Toe ");
+       tttgameboard.setCell(Mark.NOUGHT,3,3);
+       System.out.println(tttgameboard.toString());
+ 
+       System.out.println(" Connect Four ");
+       cfgameboard.setCell(Mark.RED,6,7);
+       System.out.println(cfgameboard.toString());
+ 
+       System.out.println (" Mastermind ");
+       mmgameboard.setCell(Mark.MAGENTA,5,8);
+       System.out.println(mmgameboard.toString());
+    }
+}
+		}
+	}
+}
+_____________________________________________________________________________________________________________________________________________________
+
+			//*Mastermind*//
+			mmcreateBoard(5,8);
+			int mmturn = 0;
+			int mmPlayer;
+			int mmoutcome;
+			java.util.Scanner mmscan = new java.util.Scanner(System.in);
+			do {
+				mmdiplayBoard( );
+				mmPlayer = (mmturn %2 == 0)? 
+			}
+
+_____________________________________________________________________________________________________________________________________________________
+
+public static void main (String [] args) {
+		//*Tic Tac Toe*//
+		tttcreateBoard(3,3);
+		int tttturn = 0;
+		int tttPlayer;
+		int tttoutcome;
+		java.util.Scanner tttscan = new java.util.Scanner(System.in);
+		do {
+			tttdisplayBoard( );
+			tttPlayer = (tttturn %2 == 0)? tttNOUGHT : tttCROSS;
+			if (tttPlayer == tttNOUGHT)
+				System.out.println("\n—O's turn—");
+			else System.out.println("\n—X's turn—");
+			System.out.print("Enter row and column:" );
+				try {
+					set(tttPlayer, tttscan.nextInt(), tttscan.nextInt());
+				} catch (Exception ex)
+				{System.err.println(ex); tttturn--;}
+				
+				tttturn ++;
+				tttoutcome = tttwinOrTie( );
+			} while (tttoutcome == -2);
+			
+			tttdisplayBoard();
+			
+			switch (tttoutcome) {
+			case tttNOUGHT:
+				System.out.println("O wins!");
+				break;
+			case tttCROSS:
+				System.out.println("X wins!");
+				break;
+			case 0:
+				System.out.println("Tie.");
+				break;
+			}
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+/* Set a square on the board must be empty */
+static void set(int val, int row, int col)
+throws IllegalArgumentException {
+	if (tttgameboard[row][col] == tttEMPTY)
+		tttgameboard[row][col] = val;
+	else throw new IllegalArgumentException
+		("Player already there!");
+}
+/* display the tttboard */
+private static void tttdisplayBoard() {
+	for(int r=0; r < tttgameboard.length; r++) {
+		System.out.print("|");
+		for(int c=0; c < tttgameboard[r].length; c++)
+		{
+			switch(tttgameboard[r][c]) {
+			case tttNOUGHT:
+				System.out.print("O");
+			break;
+			case tttCROSS:
+				System.out.print("X");
+			break;
+			default: //Empty
+				System.out.print(" ");
+			}
+				System.out.print("|");
+		}
+		System.out.println("\n-------");
+	}
+}
+public static void tttcreateBoard(int rows, int cols) {
+	//TODO Initialize the Tic Tac Toe gameboard
+	int r, c;
+	int tttcreateBoard [][] = new int [3][3];
+	
+	for (r=0; r < 3; ++r) {
+		for (c=0; c < 3; ++c) {
+			tttcreateBoard[r][c]=(r*1)+(c*1);
+			System.out.print(tttcreateBoard[r][c] + " ");
+		}
+		System.out.println();
+	}
+}
+
+static int tttwinOrTie() {
+	//TODO Determine whether X or O won or there is a tie in Tic Tac Toe 
+			if (tttgameboard[0][0] + tttgameboard[0][1] + tttgameboard[0][2] == 3*tttNOUGHT)
+				{return tttNOUGHT;}
+			if (tttgameboard[1][0] + tttgameboard[1][1] + tttgameboard[1][2] == 3*tttNOUGHT)
+				{return tttNOUGHT;}
+			if (tttgameboard[2][0] + tttgameboard[2][1] + tttgameboard[2][2] == 3*tttNOUGHT)
+				{return tttNOUGHT;}
+			
+			if (tttgameboard[0][0] + tttgameboard[1][0] + tttgameboard[2][0] == 3*tttNOUGHT)
+			{return tttNOUGHT;}
+			if (tttgameboard[0][1] + tttgameboard[1][1] + tttgameboard[2][1] == 3*tttNOUGHT)
+			{return tttNOUGHT;}
+			if (tttgameboard[0][2] + tttgameboard[1][2] + tttgameboard[2][2] == 3*tttNOUGHT)
+			{return tttNOUGHT;}
+			if (tttgameboard[0][0] + tttgameboard[1][1] + tttgameboard[2][2] == 3*tttNOUGHT)
+			{return tttNOUGHT;}
+			if (tttgameboard[0][2] + tttgameboard[1][1] + tttgameboard[2][0] == 3*tttNOUGHT)
+			{return tttNOUGHT;}
+			
+			if (tttgameboard[0][0] + tttgameboard[0][1] + tttgameboard[0][2] == 3*tttCROSS)
+			{return tttCROSS;}
+			if (tttgameboard[1][0] + tttgameboard[1][1] + tttgameboard[1][2] == 3*tttCROSS)
+			{return tttCROSS;}
+			if (tttgameboard[2][0] + tttgameboard[2][1] + tttgameboard[2][2] == 3*tttCROSS)
+			{return tttCROSS;}
+			
+			if (tttgameboard[0][0] + tttgameboard[1][0] + tttgameboard[2][0] == 3*tttCROSS)
+			{return tttCROSS;}
+			if (tttgameboard[0][1] + tttgameboard[1][1] + tttgameboard[2][1] == 3*tttCROSS)
+			{return tttCROSS;}
+			if (tttgameboard[0][2] + tttgameboard[1][2] + tttgameboard[2][2] == 3*tttCROSS)
+			{return tttCROSS;}
+			if (tttgameboard[0][0] + tttgameboard[1][1] + tttgameboard[2][2] == 3*tttCROSS)
+			{return tttCROSS;}
+			if (tttgameboard[0][2] + tttgameboard[1][1] + tttgameboard[2][0] == 3*tttCROSS)
+			{return tttCROSS;}
+			
+			if (tttgameboard[2][2] + tttgameboard[1][2] + tttgameboard[1][1] + tttgameboard[0][1]
+				+ tttgameboard[2][0] == 5*tttNOUGHT)
+			{return 0;}
+			if (tttgameboard[0][0] + tttgameboard[1][0] + tttgameboard[1][1] + tttgameboard[2][1] 
+				+  tttgameboard[0][2] == 5*tttNOUGHT)
+			{return 0;}
+			if (tttgameboard[0][2] + tttgameboard[1][2] + tttgameboard[1][1] + tttgameboard[2][1]
+				+ tttgameboard[0][0] == 5*tttNOUGHT)
+			{return 0;}
+			if (tttgameboard[2][0] + tttgameboard[2][1] + tttgameboard[1][1] + tttgameboard[1][2]
+				+ tttgameboard[0][0] == 5*tttNOUGHT)
+			{return 0;}
+			if (tttgameboard[0][0] + tttgameboard[0][1] + tttgameboard[1][1] + tttgameboard[1][2]
+				+ tttgameboard[2][0] == 5*tttNOUGHT)
+			{return 0;}
+			if (tttgameboard[2][0] + tttgameboard[1][0] + tttgameboard[1][1] + tttgameboard[0][1]
+				+ tttgameboard[2][2] == 5*tttNOUGHT)
+			{return 0;}
+			if (tttgameboard[0][2] + tttgameboard[0][1] + tttgameboard[1][1] + tttgameboard[1][0]
+				+ tttgameboard[2][2] == 5*tttNOUGHT)
+			{return 0;}
+			if (tttgameboard[2][2] + tttgameboard[2][1] + tttgameboard[1][1] + tttgameboard[1][0]
+				+ tttgameboard[0][2] == 5*tttNOUGHT)
+			{return 0;}
+			if(tttgameboard[0][2] + tttgameboard[0][1] + tttgameboard[1][2] + tttgameboard[2][1]
+				+  tttgameboard[1][0] == 5*tttNOUGHT)
+			{return 0;}
+			if(tttgameboard[0][0] + tttgameboard[1][0] + tttgameboard[0][1] + tttgameboard[2][1]
+				+  tttgameboard[1][2] == 5*tttNOUGHT)
+			{return 0;}
+			if(tttgameboard[2][0] + tttgameboard[1][0] + tttgameboard[2][1] + tttgameboard[0][1]
+				+  tttgameboard[1][2] == 5*tttNOUGHT)
+			{return 0;}
+			if(tttgameboard[2][2] + tttgameboard[1][2] + tttgameboard[2][1] + tttgameboard[0][1]
+				+  tttgameboard[1][0] == 5*tttNOUGHT)
+			{return 0;}
+			if (tttgameboard[0][2] + tttgameboard[0][1] + tttgameboard[1][2] + tttgameboard[1][0]
+				+ tttgameboard[2][0] == 5*tttNOUGHT)
+			{return 0;}
+			if (tttgameboard[0][2] + tttgameboard[0][1] + tttgameboard[2][1] + tttgameboard[2][0]
+				+ tttgameboard[2][1] == 5*tttNOUGHT)
+			{return 0;}
+			if (tttgameboard[0][0] + tttgameboard[0][1] + tttgameboard[1][0] + tttgameboard[2][1]
+				+ tttgameboard[2][2] == 5*tttNOUGHT)
+			{return 0;}
+			if (tttgameboard[0][0] + tttgameboard[0][1] + tttgameboard[1][0] + tttgameboard[1][2]
+				+ tttgameboard[2][2] == 5*tttNOUGHT)
+			{return 0;}
+			if (tttgameboard[2][2] + tttgameboard[2][1] + tttgameboard[1][2] + tttgameboard[1][0]
+				+ tttgameboard[0][0] == 5*tttNOUGHT)
+			{return 0;}
+			if (tttgameboard[2][2] + tttgameboard[2][1] + tttgameboard[1][2] + tttgameboard[0][1]
+				+ tttgameboard[0][0] == 5*tttNOUGHT)
+			{return 0;}
+			if (tttgameboard[2][0] + tttgameboard[2][1] + tttgameboard[1][0] + tttgameboard[0][1]
+				+ tttgameboard[0][2] == 5*tttNOUGHT)
+			{return 0;}
+			if (tttgameboard[2][0] + tttgameboard[2][1] + tttgameboard[1][0] + tttgameboard[1][2]
+				+ tttgameboard[2][2] == 5*tttNOUGHT)
+			{return 0;}
+			if (tttgameboard[2][0] + tttgameboard[1][0] + tttgameboard[2][1] + tttgameboard[0][2]
+				+ tttgameboard[0][1] == 5*tttNOUGHT)
+			{return 0;}
+			if (tttgameboard[2][0] + tttgameboard[1][0] + tttgameboard[2][1] + tttgameboard[1][2]
+				+ tttgameboard[0][2] == 5*tttNOUGHT)
+			{return 0;}
+			if (tttgameboard[0][0] + tttgameboard[0][2] + tttgameboard[1][2] + tttgameboard[2][0]
+				+ tttgameboard[2][1] == 5*tttNOUGHT)
+			{return 0;}
+			if (tttgameboard[2][2] + tttgameboard[0][1] + tttgameboard[0][2] + tttgameboard[1][0]
+				+ tttgameboard[2][0] == 5*tttNOUGHT)
+			{return 0;}
+			if (tttgameboard[0][2] + tttgameboard[1][0] + tttgameboard[0][0] + tttgameboard[2][2]
+				+ tttgameboard[2][1] == 5*tttNOUGHT)
+			{return 0;}
+			if (tttgameboard[2][0] + tttgameboard[2][2] + tttgameboard[1][2] + tttgameboard[0][0]
+				+ tttgameboard[0][1] == 5*tttNOUGHT)
+			{return 0;}
+			if (tttgameboard[0][0] + tttgameboard[0][1] + tttgameboard[2][0] + tttgameboard[2][1]
+				+ tttgameboard[1][2] == 5*tttNOUGHT)
+			{return 0;}
+			if (tttgameboard[2][0] + tttgameboard[1][0] + tttgameboard[2][2] + tttgameboard[1][2]
+				+ tttgameboard[0][1] == 5*tttNOUGHT)
+			{return 0;}
+			if (tttgameboard[0][1] + tttgameboard[0][2] + tttgameboard[2][1] + tttgameboard[2][2]
+				+ tttgameboard[1][0] == 5*tttNOUGHT)
+			{return 0;}
+			if (tttgameboard[0][0] + tttgameboard[1][0] + tttgameboard[0][2] + tttgameboard[1][2]
+				+ tttgameboard[2][1] == 5*tttNOUGHT)
+			{return 0;}
+
+return -2;
+		}
+		
+	}

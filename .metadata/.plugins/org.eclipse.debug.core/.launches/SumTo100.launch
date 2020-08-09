@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+<listEntry value="/SumTo100/src/sumto100/SumTo100.java"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+<listEntry value="1"/>
+</listAttribute>
+<booleanAttribute key="org.eclipse.jdt.launching.ATTR_EXCLUDE_TEST_CODE" value="true"/>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="sumto100.SumTo100"/>
+<stringAttribute key="org.eclipse.jdt.launching.MODULE_NAME" value="SumTo100"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="SumTo100"/>
+</launchConfiguration>

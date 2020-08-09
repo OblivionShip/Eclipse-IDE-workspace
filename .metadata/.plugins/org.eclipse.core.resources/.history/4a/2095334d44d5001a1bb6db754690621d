@@ -1,0 +1,21 @@
+package games.utilities;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class FileManager {
+	public static void writeToFile(String saveState, String fileName) {
+		//TODO: Write a string to a new file synchronously
+		try {
+			File file = new File ("ttt.txt");
+			FileWriter fileriter = new FileWriter(file);
+	}
+	public static void writeToFileAsync(final String saveState, final String fileName) {
+		//TODO: Write a string to a new file asynchronously
+	}
+	new Thread() {
+		public void run() {
+			writeToFile(saveState, fileName);
+		}
+	}.start();
+}

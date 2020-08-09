@@ -1,0 +1,77 @@
+package games.board;
+import games.boards.*;
+
+public class BoardGameTester {
+	public enum Player {FIRST, SECOND}
+	public enum Outcome {PLAYER1_WIN, PLAYER2_WIN, CONTINUE, TIE}
+	public enum Mark {EMPTY, NOUGHT, CROSS, YELLOW, RED, BLUE, GREEN, MAGENTA, ORANGE}
+	static int[][] gameboard;
+	static final int EMPTY = 0;
+	private static final int cols = 0;
+	private static final int rows = 0;
+	static Mark mark;
+	static Outcome outcome;
+	static Player player;
+	
+		public static void main(String [] args) {
+			int[][] ticTacToe = new int[3][3];
+			int[][] connectFour = new int[6][7];
+			int[][] masterMind = new int[5][8];
+			
+			class ticTacToe { 
+				int[][] gameboard = new int[3][3];
+			}
+			class connectFour { 
+				int[][] gameboard = new int[6][7];
+			}
+			class masterMind { 
+				int[][] gameboard = new int[5][8];
+			}
+			
+		}
+		
+		public abstract class GameBoard {
+			private String gameBoard[][];
+			private int rows;
+			private int cols;
+			
+			abstract void update(); // add to .this gameboard[][] using enums contained in sepearate subclasses
+		
+		public void printBoard() {
+			//Iterate over current game board
+			for(int i=0; i< rows; i++) {
+				for(int j=0; j < cols; j++) {
+					String output = (j < cols -1)? gameBoard[i][j] + " " : gameBoard[i][j];
+					System.out.print(output);; 
+				} System.out.println();
+				}
+			}
+		
+		public GameBoard(int rows, int cols) {
+			this.rows = rows;
+			this.cols = cols;
+			
+			int i, j;
+			gameBoard = new String [rows][cols];
+			
+			for (i = 0; i < rows; i++) {
+				for (j=0; j < cols; j++) {
+					gameBoard[i][j] = "EMPTY";
+					}
+				}
+			}
+		
+		public String[][] getGameBoard() {
+			return gameBoard;
+			}
+		}
+		public void printBoard() {
+			//Iterate over current game board
+			for(int i=0; i< rows; i++) {
+				for(int j=0; j < cols; j++) {
+					String output = (j < cols -1)? gameboard[i][j] + " " : gameboard[i][j];
+					System.out.print(output);; 
+				} System.out.println();
+				}
+			}
+}

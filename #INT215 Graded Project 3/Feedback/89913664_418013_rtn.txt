@@ -1,0 +1,21 @@
+﻿08/07/2020
+
+Thank you for your recent project submission. Unfortunately, we cannot grade your work at
+this time because your project does not meet the requirements to pass.
+
+You did not follow the project instructions outlined.
+
+The program should perform the following items:
+a. Create a 3 x 3 board for a Tic-Tac-Toe game.
+b. Create a 6 x 7 board for a Connect Four game.
+c. Create a 5 x 8 board for a game of Mastermind.
+d. Set a cell to a nought or cross on the Tic-Tac-Toe board.
+e. Set a cell to yellow or red on the Connect Four board.
+f. Set a cell to yellow, red, green, blue, magenta, or orange on the Mastermind board.
+g. Display the boards for Tic-Tac-Toe, Connect Four, and Mastermind.
+
+Please revise your work and submit the updated project for grading.
+
+Tech Instructors
+Penn Foster
+edserv@pennfoster.edu

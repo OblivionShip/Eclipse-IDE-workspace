@@ -1,0 +1,72 @@
+package boardgametester;
+import games.board.*;
+import game.utilities.FileManager;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.nio.charset.Charset;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+ 
+/**
+ *
+ * @author 
+ */
+ 
+public class BoardGameTester{ 
+ 
+private static Board TicTacToeGameBoard,ConnectFourGameBoard,MastermindGameBoard;
+ 
+   
+    public static void main(String[] args) {
+    
+    Board TicTacToeGameBoard;
+    Board TTTGameBoard = new Board(3,3);
+    System.out.println("Tic Tac Toe Game Board");
+    TTTGameBoard.setCell(Mark.CROSS,1,1);
+    System.out.println(TTTGameBoard.toString());
+    FileManager.writeToFileAsync(TTTGameBoard.toString(), "ttt.txt");
+   
+    Board ConnectFourGameBoard;
+    Board CFGameBoard = new Board(6,7);
+    System.out.println("Connect Four Game Board");
+    CFGameBoard.setCell(Mark.RED,0,0);
+    System.out.println(CFGameBoard.toString());
+    FileManager.writeToFileAsync(CFGameBoard.toString(), "c4.txt");
+     
+    Board MastermindGameBoard;
+    Board MMGameBoard = new Board(5,8);
+    System.out.println("Mastermind Game Board");
+    MMGameBoard.setCell(Mark.GREEN,0,0);
+    System.out.println(MMGameBoard.toString());
+    FileManager.writeToFileAsync(MMGameBoard.toString(), "mm.txt");
+    }
+   public static Board getTTTGameBoard() {
+        return TicTacToeGameBoard;
+    }
+   public static void setTTTGameBaord(Board TTTGameBoard) {
+       BoardGameTester.TicTacToeGameBoard = TTTGameBoard;
+   }
+     public static Board getCFGameBoard() {
+        return ConnectFourGameBoard;
+}
+      public static void setCFGameBaord(Board CFGameBoard) {
+       BoardGameTester.ConnectFourGameBoard = CFGameBoard;
+   }
+     public static Board getMMGameBoard() {
+        return MastermindGameBoard;
+}
+      public static void setMMGameBaord(Board MMGameBoard) {
+       BoardGameTester.MastermindGameBoard = MMGameBoard;
+       
+    
+    
+    }
+ 
+}
+}

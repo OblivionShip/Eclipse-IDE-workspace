@@ -1,0 +1,21 @@
+package games.utilities;
+import java.io.*;
+import java.lang.Thread;
+
+public class FileManager {
+		public static void writeToFile(String saveState, String fileName) {
+			//TODO: Write a string to a new file synchronously
+			try {
+				FileWriter
+			}
+		}
+		public static void writeToFileAsync (String saveState, String fileName) {
+			//TODO: Write a string to a new file asynchronously	
+			new Thread() {
+				public void run() {
+					writeToFile(saveState fileName);
+				}
+			}.start();
+		}
+		
+}

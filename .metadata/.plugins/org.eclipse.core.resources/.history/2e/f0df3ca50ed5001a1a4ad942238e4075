@@ -1,0 +1,15 @@
+package games.utilities;
+
+public class FileManager {
+	public static void writeToFile(String saveState, String fileName) {
+		//TODO: Write a string to a new file synchronously
+	}
+	public static void writeToFileAsync(final String saveState, final String fileName) {
+		//TODO: Write a string to a new file asynchronously
+	}
+	new Thread() {
+		public void run() {
+			writeToFile(saveState, fileName);
+		}
+	}.start();
+}

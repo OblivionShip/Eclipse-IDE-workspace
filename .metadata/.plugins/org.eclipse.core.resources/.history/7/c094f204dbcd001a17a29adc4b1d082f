@@ -1,0 +1,5 @@
+package games.board;
+
+public enum Player {
+
+}
